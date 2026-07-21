@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// Use 127.0.0.1 instead of localhost to prevent IPv6 (::1) resolution issues on Windows
-const BASE_URL = 'http://127.0.0.1:8000/api';
+// Use environment variable VITE_API_BASE_URL if available, otherwise default to local backend
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000/api';
 
 const apiInstance = axios.create({
   baseURL: BASE_URL,
