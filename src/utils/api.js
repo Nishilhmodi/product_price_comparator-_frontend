@@ -1,7 +1,15 @@
 import axios from 'axios';
 
 // Use environment variable VITE_API_BASE_URL if available, otherwise default to local backend
-export const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000/api';
+const getSanitizedBaseUrl = () => {
+  let url = import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000/api';
+  url = url.trim().replace(/\/+$/, ''); // remove trailing slashes
+  if (!url.endsWith('/api')) {
+    url += '/api';
+  }
+  return url;
+};
+export const BASE_URL = getSanitizedBaseUrl();
 
 const apiInstance = axios.create({
   baseURL: BASE_URL,
