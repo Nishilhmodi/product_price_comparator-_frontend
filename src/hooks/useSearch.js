@@ -42,7 +42,12 @@ export function useSearch(query, filters) {
 
     } catch (err) {
       console.error("Live API connection failed:", err);
-      setError("Failed to connect to the live PriceHunt server. Please verify that the backend is running.");
+      const isTimeout = err.code === 'ECONNABORTED' || err.message?.includes('timeout');
+      if (isTimeout) {
+        setError("Search request timed out. If the backend server was sleeping (Render Free Tier cold start), it can take 50-60 seconds to wake up. Please refresh the page or try searching again in a moment.");
+      } else {
+        setError("Failed to connect to the live PriceHunt server. If you just deployed, the server may still be starting up or waking from sleep. Please try again in a few seconds.");
+      }
       setResults([]);
       setSourceInfo('');
       setIntentChips([]);
