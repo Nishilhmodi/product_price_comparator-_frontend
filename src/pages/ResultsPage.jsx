@@ -7,6 +7,8 @@ import { SkeletonCard } from '../components/SkeletonCard';
 import { EmptyState } from '../components/EmptyState';
 import { Footer } from '../components/Footer';
 import bgWaves from '../assets/bg-waves.jpg';
+import { BASE_URL } from '../utils/api';
+
 
 const DEFAULT_FILTERS = {
   sort: 'Price: Low to High',
@@ -215,6 +217,9 @@ export function ResultsPage() {
     </div>
   );
 
+  const isProd = window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1';
+  const isLocalApi = BASE_URL.includes('127.0.0.1') || BASE_URL.includes('localhost');
+
   return (
     <div 
       className="min-h-screen w-full bg-slate-50 flex flex-col transition-all duration-300 relative"
@@ -229,6 +234,17 @@ export function ResultsPage() {
         backgroundRepeat: 'no-repeat, no-repeat'
       }}
     >
+      {isProd && isLocalApi && (
+        <div className="bg-amber-500 text-white py-3 px-4 text-center text-xs font-bold shadow-sm relative z-50 flex items-center justify-center gap-2 animate-fade-in">
+          <svg className="h-5 w-5 shrink-0 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
+          <span>
+            <strong>Action Required:</strong> This site is live, but your API base URL is still pointing to the local address (127.0.0.1). Please configure the <code className="bg-amber-600 px-1.5 py-0.5 rounded text-[10px]">VITE_API_BASE_URL</code> environment variable in your Vercel/hosting dashboard to point to your live Render backend URL!
+          </span>
+        </div>
+      )}
+
       {/* Navbar */}
       <Navbar showSearch={true} searchQuery={query} />
 
