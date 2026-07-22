@@ -403,20 +403,21 @@ export function HomePage() {
             ))}
           </div>
         </section>
+      </main>
 
-        {/* Featured Discoveries (Trending) */}
-        <section className="flex flex-col gap-6 w-full overflow-hidden">
-          <div className="flex flex-col items-center gap-2 text-center">
-            <span className="text-[10px] font-bold tracking-widest uppercase text-indigo-600">Trending Finds</span>
-            <h2 className="text-2xl md:text-3.5xl font-black text-slate-900 tracking-tight">Featured Discoveries</h2>
-            <div className="h-1.5 w-12 bg-indigo-600 rounded-full mt-1.5"></div>
-          </div>
+      {/* Featured Discoveries (Trending) - Full Width Section */}
+      <section className="flex flex-col gap-6 w-full overflow-hidden py-12 bg-slate-50/20 border-y border-slate-100/50 relative z-10">
+        <div className="mx-auto w-full max-w-7xl px-4 flex flex-col items-center gap-2 text-center">
+          <span className="text-[10px] font-bold tracking-widest uppercase text-indigo-600">Trending Finds</span>
+          <h2 className="text-2xl md:text-3.5xl font-black text-slate-900 tracking-tight">Featured Discoveries</h2>
+          <div className="h-1.5 w-12 bg-indigo-600 rounded-full mt-1.5"></div>
+        </div>
 
           {/* Conveyor Belt Marquee wrapper */}
           <div className="w-full overflow-hidden py-4 relative mt-2">
             {/* Soft gradient fade overlays on left and right for seamless look */}
-            <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none"></div>
             
             <div className="flex animate-marquee gap-5">
               {[...FEATURED_DISCOVERIES, ...FEATURED_DISCOVERIES].map((prod, i) => (
@@ -464,9 +465,12 @@ export function HomePage() {
           </div>
         </section>
 
-        {/* Live Status Statistics - Responsive mobile (1 col stacked) vs desktop (3 cols inline) */}
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-0 border border-slate-100 rounded-2xl bg-white p-6 py-8 md:py-10 text-center shadow-sm relative overflow-hidden">
-          <div className="absolute inset-0 opacity-[0.01] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#4f46e5 1.5px, transparent 1.5px)', backgroundSize: '16px 16px' }}></div>
+        {/* Re-open Main Container for subsequent sections */}
+        <main className="mx-auto w-full max-w-7xl px-4 py-10 flex flex-col gap-20 relative z-10">
+
+          {/* Live Status Statistics - Responsive mobile (1 col stacked) vs desktop (3 cols inline) */}
+          <section className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-0 border border-slate-100 rounded-2xl bg-white p-6 py-8 md:py-10 text-center shadow-sm relative overflow-hidden">
+            <div className="absolute inset-0 opacity-[0.01] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#4f46e5 1.5px, transparent 1.5px)', backgroundSize: '16px 16px' }}></div>
           <div className="flex flex-col gap-1 border-b border-slate-100/60 pb-5 md:pb-0 md:border-b-0 md:border-r border-slate-100 z-10">
             <span className="text-3xl md:text-4.5xl font-black text-indigo-650 tracking-tight">4+</span>
             <span className="text-[10.5px] font-bold tracking-wider uppercase text-slate-400 mt-0.5">Stores Integrated</span>
