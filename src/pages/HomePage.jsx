@@ -93,7 +93,7 @@ const FEATURED_DISCOVERIES = [
     platform: "Flipkart",
     type: "Audio",
     searchQuery: "JBL Go 4 Wireless Ultra Portable Bluetooth Speaker",
-    image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=200&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?q=80&w=200&auto=format&fit=crop"
   },
   {
     name: "samsung s26 ultra",
