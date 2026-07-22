@@ -454,23 +454,23 @@ export function HomePage() {
           </div>
         </section>
 
-        {/* Live Status Statistics */}
-        <section className="grid grid-cols-3 border border-slate-100 rounded-2xl bg-white py-10 text-center shadow-sm relative overflow-hidden">
+        {/* Live Status Statistics - Responsive mobile (1 col stacked) vs desktop (3 cols inline) */}
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-0 border border-slate-100 rounded-2xl bg-white p-6 py-8 md:py-10 text-center shadow-sm relative overflow-hidden">
           <div className="absolute inset-0 opacity-[0.01] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#4f46e5 1.5px, transparent 1.5px)', backgroundSize: '16px 16px' }}></div>
-          <div className="flex flex-col gap-1 border-r border-slate-100 z-10">
-            <span className="text-3xl md:text-4.5xl font-black text-indigo-600 tracking-tight">4+</span>
-            <span className="text-[10px] font-extrabold tracking-widest uppercase text-slate-400 mt-0.5">Stores Integrated</span>
+          <div className="flex flex-col gap-1 border-b border-slate-100/60 pb-5 md:pb-0 md:border-b-0 md:border-r border-slate-100 z-10">
+            <span className="text-3xl md:text-4.5xl font-black text-indigo-650 tracking-tight">4+</span>
+            <span className="text-[10.5px] font-bold tracking-wider uppercase text-slate-400 mt-0.5">Stores Integrated</span>
           </div>
-          <div className="flex flex-col gap-1 border-r border-slate-100 z-10">
-            <span className="text-3xl md:text-4.5xl font-black text-indigo-600 tracking-tight">100%</span>
-            <span className="text-[10px] font-extrabold tracking-widest uppercase text-slate-400 mt-0.5">Real-Time Prices</span>
+          <div className="flex flex-col gap-1 border-b border-slate-100/60 pb-5 md:pb-0 md:border-b-0 md:border-r border-slate-100 z-10">
+            <span className="text-3xl md:text-4.5xl font-black text-indigo-650 tracking-tight">100%</span>
+            <span className="text-[10.5px] font-bold tracking-wider uppercase text-slate-400 mt-0.5">Real-Time Prices</span>
           </div>
           <div className="flex flex-col gap-1 z-10">
-            <span className="text-3xl md:text-4.5xl font-black text-indigo-600 tracking-tight flex items-center justify-center gap-1.5 md:gap-2">
+            <span className="text-3xl md:text-4.5xl font-black text-indigo-650 tracking-tight flex items-center justify-center gap-1.5 md:gap-2">
               <span className="inline-block h-3 w-3 rounded-full bg-emerald-500 animate-pulse"></span>
               Active
             </span>
-            <span className="text-[10px] font-extrabold tracking-widest uppercase text-slate-400 mt-0.5">Server Status</span>
+            <span className="text-[10.5px] font-bold tracking-wider uppercase text-slate-400 mt-0.5">Server Status</span>
           </div>
         </section>
 
