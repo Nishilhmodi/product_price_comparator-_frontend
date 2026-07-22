@@ -117,7 +117,7 @@ const FEATURED_DISCOVERIES = [
     platform: "Flipkart",
     type: "Electronics",
     searchQuery: "Samsung 256 L frost Free Double Door Refrigerator",
-    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?q=80&w=300&auto=format&fit=crop"
   },
   {
     name: "Minimalist Face Serum Essentials",
