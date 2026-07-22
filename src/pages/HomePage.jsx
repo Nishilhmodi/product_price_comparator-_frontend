@@ -88,6 +88,14 @@ const COLLECTIONS = [
 
 const FEATURED_DISCOVERIES = [
   {
+    name: "JBL Go 4 Wireless Ultra Portable Bluetooth Speaker",
+    price: 3499,
+    platform: "Flipkart",
+    type: "Audio",
+    searchQuery: "JBL Go 4 Wireless Ultra Portable Bluetooth Speaker",
+    image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=200&auto=format&fit=crop"
+  },
+  {
     name: "samsung s26 ultra",
     price: 119999,
     platform: "Amazon",
