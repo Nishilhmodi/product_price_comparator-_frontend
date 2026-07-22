@@ -9,10 +9,10 @@ export function SkeletonCard() {
         {[...Array(4)].map((_, i) => (
           <div
             key={i}
-            className="grid grid-cols-[auto_1fr_auto] items-center gap-1.5 px-2 py-1 sm:px-2.5 sm:py-1.5 rounded-lg sm:rounded-xl border border-slate-100 bg-white h-[26px] sm:h-[34px]"
+            className="grid grid-cols-[auto_1fr_auto] items-center gap-1.5 px-2 py-1 sm:px-2.5 sm:py-1.5 rounded-lg sm:rounded-xl border border-slate-100 bg-white h-[28px] sm:h-[34px]"
           >
             {/* 1. Favicon skeleton */}
-            <div className="h-3.5 w-3.5 rounded bg-slate-200/60 animate-pulse shrink-0"></div>
+            <div className="h-5 w-5 rounded bg-slate-200/60 animate-pulse shrink-0"></div>
             
             {/* 2. Platform Name skeleton (Hidden on mobile) */}
             <div className="h-2 w-12 bg-slate-200/60 rounded animate-pulse hidden sm:inline-block ml-1"></div>

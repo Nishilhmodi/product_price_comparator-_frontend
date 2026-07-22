@@ -112,7 +112,7 @@ export function ProductCard({ product }) {
                 <img 
                   src={`https://www.google.com/s2/favicons?sz=64&domain=${getPlatformDomain(platform)}`} 
                   alt={platform} 
-                  className="h-3.5 w-3.5 object-contain rounded shrink-0" 
+                  className="h-5 w-5 object-contain rounded shrink-0" 
                 />
                 
                 {/* 2. Platform Name (Hidden on mobile to prevent overflow) */}
@@ -140,7 +140,7 @@ export function ProductCard({ product }) {
                 <img 
                   src={`https://www.google.com/s2/favicons?sz=64&domain=${getPlatformDomain(platform)}`} 
                   alt={platform} 
-                  className="h-3.5 w-3.5 object-contain rounded grayscale opacity-45 shrink-0" 
+                  className="h-5 w-5 object-contain rounded grayscale opacity-45 shrink-0" 
                 />
                 
                 {/* 2. Platform Name (Hidden on mobile) */}
