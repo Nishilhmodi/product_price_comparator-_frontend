@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { useRef } from 'react';
 import { Navbar } from '../components/Navbar';
 import { SearchBar } from '../components/SearchBar';
 import { formatINR } from '../utils/format';
@@ -92,7 +93,7 @@ const FEATURED_DISCOVERIES = [
     platform: "Amazon",
     type: "Smartphone",
     searchQuery: "samsung s26 ultra",
-    image: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?q=80&w=200&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=200&auto=format&fit=crop"
   },
   {
     name: "Sony WH-1000XM5 Noise Cancelling Headphones",
@@ -154,6 +155,19 @@ const FEATURED_DISCOVERIES = [
 
 export function HomePage() {
   const navigate = useNavigate();
+  const discoveriesRef = useRef(null);
+
+  const scrollDiscoveries = (direction) => {
+    if (discoveriesRef.current) {
+      const cardWidth = 295; // card width
+      const gap = 16; // space gap
+      const scrollAmount = direction === 'left' ? -(cardWidth + gap) : (cardWidth + gap);
+      discoveriesRef.current.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   const handleSearchSubmit = (query) => {
     navigate(`/results?q=${encodeURIComponent(query)}`);
@@ -382,19 +396,46 @@ export function HomePage() {
 
         {/* Featured Discoveries (Trending) */}
         <section className="flex flex-col gap-6">
-          <div className="flex flex-col items-center gap-2 text-center">
-            <span className="text-[10px] font-bold tracking-widest uppercase text-indigo-600">Trending Finds</span>
-            <h2 className="text-2xl md:text-3.5xl font-black text-slate-900 tracking-tight">Featured Discoveries</h2>
-            <div className="h-1.5 w-12 bg-indigo-600 rounded-full mt-1.5"></div>
+          <div className="flex items-end justify-between border-b border-slate-100/50 pb-4">
+            <div className="flex flex-col items-start gap-1 text-left">
+              <span className="text-[10.5px] font-bold tracking-widest uppercase text-indigo-600">Trending Finds</span>
+              <h2 className="text-2xl md:text-3.5xl font-black text-slate-900 tracking-tight">Featured Discoveries</h2>
+            </div>
+            
+            {/* Scroll Navigation Buttons */}
+            <div className="flex items-center gap-2">
+              <button 
+                onClick={() => scrollDiscoveries('left')}
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 hover:border-indigo-500 hover:text-indigo-600 active:scale-95 transition-all duration-200 cursor-pointer shadow-sm"
+                aria-label="Scroll Left"
+              >
+                <svg className="h-4.5 w-4.5 stroke-[2.5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button 
+                onClick={() => scrollDiscoveries('right')}
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 hover:border-indigo-500 hover:text-indigo-600 active:scale-95 transition-all duration-200 cursor-pointer shadow-sm"
+                aria-label="Scroll Right"
+              >
+                <svg className="h-4.5 w-4.5 stroke-[2.5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+          {/* Horizontal Scrollable Carousel Container */}
+          <div 
+            ref={discoveriesRef}
+            className="flex overflow-x-auto snap-x snap-mandatory scrollbar-none gap-4 py-2 -mx-4 px-4 md:mx-0 md:px-0 scroll-smooth"
+          >
             {FEATURED_DISCOVERIES.map((prod, i) => (
               <div
                 key={i}
                 onClick={() => handleTrendingClick(prod.searchQuery)}
-                className="group flex items-center gap-5 border border-slate-100 bg-white p-5 md:p-6 rounded-2xl cursor-pointer hover:border-indigo-500/40 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 animate-scale-in"
-                style={{ animationDelay: `${i * 120}ms`, animationFillMode: 'both' }}
+                className="group flex items-center gap-5 border border-slate-100 bg-white p-5 rounded-2xl cursor-pointer hover:border-indigo-500/40 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 animate-slide-in-right shrink-0 w-[295px] md:w-[325px] snap-center"
+                style={{ animationDelay: `${i * 100}ms`, animationFillMode: 'both' }}
               >
                 {/* Product Image / Fallback Icon */}
                 <div className="h-20 w-20 shrink-0 rounded-2xl border border-slate-100 bg-slate-50 flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:border-indigo-100">
@@ -414,15 +455,15 @@ export function HomePage() {
                 <div className="flex flex-col gap-1 overflow-hidden text-left flex-grow">
                   <span className="text-[10.5px] font-extrabold tracking-wider uppercase text-indigo-500">{prod.type}</span>
                   <h4 className="text-sm font-extrabold text-slate-800 truncate tracking-wide">{prod.name}</h4>
-                  <div className="flex items-baseline gap-2.5 mt-0.5">
-                    <span className="text-sm font-black text-slate-800">{formatINR(prod.price)}</span>
-                    <span className="text-[10px] font-extrabold tracking-wider text-slate-400 uppercase">
-                      Lowest on {prod.platform}
+                  <div className="flex items-baseline gap-1.5 mt-0.5">
+                    <span className="text-sm font-black text-slate-800 shrink-0">{formatINR(prod.price)}</span>
+                    <span className="text-[9px] font-extrabold tracking-wider text-slate-400 uppercase truncate">
+                      on {prod.platform}
                     </span>
                   </div>
                 </div>
-                <div className="text-slate-300 group-hover:text-indigo-600 transition-colors pr-2">
-                  <svg className="h-5 w-5 transform group-hover:translate-x-1.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <div className="text-slate-300 group-hover:text-indigo-600 transition-colors pr-1">
+                  <svg className="h-4.5 w-4.5 transform group-hover:translate-x-1 transition-transform stroke-[2.5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                   </svg>
                 </div>
