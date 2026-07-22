@@ -112,12 +112,12 @@ const FEATURED_DISCOVERIES = [
     image: "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?q=80&w=200&auto=format&fit=crop"
   },
   {
-    name: "Samsung 256 L frost Free Double Door Refrigerator",
-    price: 29999,
+    name: "Carrier 1.5 Ton 5 Star Split AC",
+    price: 45499,
     platform: "Flipkart",
     type: "Electronics",
-    searchQuery: "Samsung 256 L frost Free Double Door Refrigerator",
-    image: "https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?q=80&w=300&auto=format&fit=crop"
+    searchQuery: "Carrier 1.5 Ton 5 Star Split AC",
+    image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=200&auto=format&fit=crop"
   },
   {
     name: "Minimalist Face Serum Essentials",
