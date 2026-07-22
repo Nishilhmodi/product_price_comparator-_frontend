@@ -89,7 +89,7 @@ export function ProductCard({ product }) {
       </div>
 
       {/* Clean vertical list comparison display */}
-      <div className="flex flex-col gap-1.5 p-3 bg-slate-50/30 border-b border-slate-100/60">
+      <div className="flex flex-col gap-1 p-2 bg-slate-50/30 border-b border-slate-100/60">
         {['Amazon', 'Flipkart', 'Myntra', 'Ajio'].map((platform) => {
           const offer = getPlatformOffer(platform);
           const hasPrice = !!offer;
@@ -102,7 +102,7 @@ export function ProductCard({ product }) {
                 href={offer.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`grid grid-cols-[auto_1fr_auto] items-center gap-1.5 px-2.5 py-1.5 rounded-xl transition-all duration-200 border cursor-pointer text-left ${
+                className={`grid grid-cols-[auto_1fr_auto] items-center gap-1 px-2 py-1 sm:px-2.5 sm:py-1.5 rounded-lg sm:rounded-xl transition-all duration-200 border cursor-pointer text-left ${
                   isLowest 
                     ? "bg-emerald-50/50 border-emerald-500/20 text-emerald-700 hover:bg-emerald-600 hover:text-white hover:border-emerald-600 shadow-[0_1px_2px_rgba(16,185,129,0.03)]" 
                     : "bg-white border-slate-100 text-slate-700 hover:border-indigo-500/30 hover:bg-indigo-50/10 hover:text-indigo-700 shadow-[0_1px_2px_rgba(0,0,0,0.01)]"
@@ -115,15 +115,18 @@ export function ProductCard({ product }) {
                   className="h-3.5 w-3.5 object-contain rounded shrink-0" 
                 />
                 
-                {/* 2. Platform Name (Truncates to prevent collision) */}
-                <span className="text-[9.5px] font-bold uppercase tracking-wider truncate mr-1">{platform}</span>
+                {/* 2. Platform Name (Hidden on mobile to prevent overflow) */}
+                <span className="text-[9.5px] font-bold uppercase tracking-wider truncate mr-1 hidden sm:inline">{platform}</span>
                 
                 {/* 3. Badge & Price */}
-                <div className="flex items-center gap-1.5 justify-end shrink-0">
+                <div className="flex items-center gap-1.5 justify-end shrink-0 col-start-3">
                   {isLowest && (
-                    <span className="text-[7.5px] font-black uppercase tracking-wide bg-emerald-500 text-white px-1.5 py-0.5 rounded shrink-0">Lowest</span>
+                    <>
+                      <span className="text-[7.5px] font-black uppercase tracking-wide bg-emerald-500 text-white px-1.5 py-0.5 rounded shrink-0 hidden sm:inline-block">Lowest</span>
+                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 sm:hidden shrink-0" title="Lowest Price"></span>
+                    </>
                   )}
-                  <span className="text-[10.5px] font-black shrink-0">{formatINR(offer.price)}</span>
+                  <span className="text-[10px] sm:text-[10.5px] font-black shrink-0">{formatINR(offer.price)}</span>
                 </div>
               </a>
             );
@@ -131,7 +134,7 @@ export function ProductCard({ product }) {
             return (
               <div
                 key={platform}
-                className="grid grid-cols-[auto_1fr_auto] items-center gap-1.5 px-2.5 py-1.5 rounded-xl border border-dashed border-slate-100 bg-white/40 text-slate-400 select-none opacity-70 text-left"
+                className="grid grid-cols-[auto_1fr_auto] items-center gap-1 px-2 py-1 sm:px-2.5 sm:py-1.5 rounded-lg sm:rounded-xl border border-dashed border-slate-100 bg-white/40 text-slate-400 select-none opacity-70 text-left"
               >
                 {/* 1. Favicon */}
                 <img 
@@ -140,11 +143,11 @@ export function ProductCard({ product }) {
                   className="h-3.5 w-3.5 object-contain rounded grayscale opacity-45 shrink-0" 
                 />
                 
-                {/* 2. Platform Name */}
-                <span className="text-[9.5px] font-semibold uppercase tracking-wider truncate mr-1">{platform}</span>
+                {/* 2. Platform Name (Hidden on mobile) */}
+                <span className="text-[9.5px] font-semibold uppercase tracking-wider truncate mr-1 hidden sm:inline">{platform}</span>
                 
                 {/* 3. Status */}
-                <span className="text-[9.5px] font-bold text-slate-350 tracking-wide shrink-0 justify-self-end">N/A</span>
+                <span className="text-[9.5px] font-bold text-slate-350 tracking-wide shrink-0 justify-self-end col-start-3">N/A</span>
               </div>
             );
           }

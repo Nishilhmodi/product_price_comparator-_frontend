@@ -351,7 +351,7 @@ export function ResultsPage() {
           {/* Product Cards Grid / Loading / Empty States */}
           {loading ? (
             /* Pulsing skeleton cards in 3-column grid */
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 w-full">
               {[...Array(6)].map((_, i) => (
                 <SkeletonCard key={i} />
               ))}
@@ -362,7 +362,7 @@ export function ResultsPage() {
           ) : (
             /* 3-Column Product Grid */
             <div className="flex flex-col gap-6 w-full">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
+              <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 w-full">
                 {visibleResults.map((product, idx) => (
                   <div 
                     key={product.title + idx} 
