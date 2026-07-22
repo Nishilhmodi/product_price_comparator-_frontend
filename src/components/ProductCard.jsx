@@ -88,66 +88,57 @@ export function ProductCard({ product }) {
         )}
       </div>
 
-      {/* 2x2 Platform Buttons Grid - Responsive layout for mobile (1 col flex-row) vs desktop (2 cols flex-col) */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 p-2.5 bg-slate-50/30 border-b border-slate-100/60">
+      {/* Clean vertical list comparison display */}
+      <div className="flex flex-col gap-1.5 p-3 bg-slate-50/30 border-b border-slate-100/60">
         {['Amazon', 'Flipkart', 'Myntra', 'Ajio'].map((platform) => {
           const offer = getPlatformOffer(platform);
           const hasPrice = !!offer;
           
           if (hasPrice) {
-            let btnStyle = "";
-            if (offer.is_lowest) {
-              btnStyle = "border border-emerald-500/20 bg-emerald-50/40 text-emerald-700 hover:bg-emerald-600 hover:text-white hover:border-emerald-600 shadow-[0_1px_2px_rgba(16,185,129,0.05)]";
-            } else {
-              btnStyle = "border border-slate-100 bg-white text-slate-700 hover:border-indigo-500/30 hover:bg-indigo-50/10 hover:text-indigo-700 shadow-[0_1px_2px_rgba(0,0,0,0.01)]";
-            }
-            
+            const isLowest = offer.is_lowest;
             return (
               <a
                 key={platform}
                 href={offer.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`flex items-center justify-between sm:flex-col sm:items-start sm:justify-center px-2.5 py-1.5 sm:py-2 transition-all duration-200 text-left rounded-xl cursor-pointer ${btnStyle}`}
+                className={`flex items-center justify-between px-3 py-1.5 rounded-xl transition-all duration-200 border cursor-pointer ${
+                  isLowest 
+                    ? "bg-emerald-50/50 border-emerald-500/20 text-emerald-700 hover:bg-emerald-600 hover:text-white hover:border-emerald-600 shadow-[0_1px_2px_rgba(16,185,129,0.03)]" 
+                    : "bg-white border-slate-100 text-slate-700 hover:border-indigo-500/30 hover:bg-indigo-50/10 hover:text-indigo-700 shadow-[0_1px_2px_rgba(0,0,0,0.01)]"
+                }`}
               >
-                {/* Left/Top: Platform name and Favicon */}
-                <div className="flex items-center gap-1.5">
+                <div className="flex items-center gap-2">
                   <img 
                     src={`https://www.google.com/s2/favicons?sz=64&domain=${getPlatformDomain(platform)}`} 
                     alt={platform} 
-                    className="h-3 w-3 object-contain rounded" 
+                    className="h-3.5 w-3.5 object-contain rounded" 
                   />
-                  <span className="text-[9px] font-bold tracking-wider uppercase">{platform}</span>
-                  {offer.is_lowest && (
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 sm:inline-block hidden ml-1"></span>
-                  )}
+                  <span className="text-[10px] font-bold uppercase tracking-wider">{platform}</span>
                 </div>
-                {/* Right/Bottom: Price */}
-                <span className="text-[10.5px] font-black tracking-wide sm:mt-1">
-                  {formatINR(offer.price)}
-                </span>
+                <div className="flex items-center gap-2">
+                  {isLowest && (
+                    <span className="text-[7.5px] font-extrabold uppercase tracking-widest bg-emerald-500 text-white px-1.5 py-0.5 rounded-md">Lowest</span>
+                  )}
+                  <span className="text-[11px] font-black">{formatINR(offer.price)}</span>
+                </div>
               </a>
             );
           } else {
-            // Dull/disabled state
             return (
               <div
                 key={platform}
-                className="flex items-center justify-between sm:flex-col sm:items-start sm:justify-center px-2.5 py-1.5 sm:py-2 text-left rounded-xl border border-slate-100/40 bg-slate-50/20 text-slate-350 select-none"
+                className="flex items-center justify-between px-3 py-1.5 rounded-xl border border-dashed border-slate-100 bg-white/40 text-slate-400 select-none opacity-70"
               >
-                {/* Left/Top: Platform name and Favicon */}
-                <div className="flex items-center gap-1.5 opacity-55">
+                <div className="flex items-center gap-2">
                   <img 
                     src={`https://www.google.com/s2/favicons?sz=64&domain=${getPlatformDomain(platform)}`} 
                     alt={platform} 
-                    className="h-3 w-3 object-contain rounded opacity-35 grayscale" 
+                    className="h-3.5 w-3.5 object-contain rounded grayscale opacity-45" 
                   />
-                  <span className="text-[9px] font-bold tracking-wider uppercase">{platform}</span>
+                  <span className="text-[10px] font-semibold uppercase tracking-wider">{platform}</span>
                 </div>
-                {/* Right/Bottom: Status */}
-                <span className="text-[9.5px] sm:text-[10px] font-medium sm:mt-1 opacity-55">
-                  Not Available
-                </span>
+                <span className="text-[9.5px] font-bold text-slate-300 tracking-wide">N/A</span>
               </div>
             );
           }
