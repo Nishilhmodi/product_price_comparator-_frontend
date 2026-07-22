@@ -117,7 +117,7 @@ const FEATURED_DISCOVERIES = [
     platform: "Flipkart",
     type: "Electronics",
     searchQuery: "Samsung 256 L frost Free Double Door Refrigerator",
-    image: "https://media.croma.com/image/upload/v1684393231/Croma%20Assets/Large%20Appliances/Refrigerator/Images/272365_0_epig1n.png"
+    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=200&auto=format&fit=crop"
   },
   {
     name: "Minimalist Face Serum Essentials",
@@ -421,7 +421,7 @@ export function HomePage() {
                       <img 
                         src={prod.image} 
                         alt={prod.name} 
-                        className="h-full w-full object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                     ) : (
                       <svg className="h-8 w-8 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
