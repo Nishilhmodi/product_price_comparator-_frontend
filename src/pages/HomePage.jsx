@@ -395,80 +395,62 @@ export function HomePage() {
         </section>
 
         {/* Featured Discoveries (Trending) */}
-        <section className="flex flex-col gap-6">
-          <div className="flex items-end justify-between border-b border-slate-100/50 pb-4">
-            <div className="flex flex-col items-start gap-1 text-left">
-              <span className="text-[10.5px] font-bold tracking-widest uppercase text-indigo-600">Trending Finds</span>
-              <h2 className="text-2xl md:text-3.5xl font-black text-slate-900 tracking-tight">Featured Discoveries</h2>
-            </div>
-            
-            {/* Scroll Navigation Buttons */}
-            <div className="flex items-center gap-2">
-              <button 
-                onClick={() => scrollDiscoveries('left')}
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 hover:border-indigo-500 hover:text-indigo-600 active:scale-95 transition-all duration-200 cursor-pointer shadow-sm"
-                aria-label="Scroll Left"
-              >
-                <svg className="h-4.5 w-4.5 stroke-[2.5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-                </svg>
-              </button>
-              <button 
-                onClick={() => scrollDiscoveries('right')}
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 hover:border-indigo-500 hover:text-indigo-600 active:scale-95 transition-all duration-200 cursor-pointer shadow-sm"
-                aria-label="Scroll Right"
-              >
-                <svg className="h-4.5 w-4.5 stroke-[2.5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                </svg>
-              </button>
-            </div>
+        <section className="flex flex-col gap-6 w-full overflow-hidden">
+          <div className="flex flex-col items-center gap-2 text-center">
+            <span className="text-[10px] font-bold tracking-widest uppercase text-indigo-600">Trending Finds</span>
+            <h2 className="text-2xl md:text-3.5xl font-black text-slate-900 tracking-tight">Featured Discoveries</h2>
+            <div className="h-1.5 w-12 bg-indigo-600 rounded-full mt-1.5"></div>
           </div>
 
-          {/* Horizontal Scrollable Carousel Container */}
-          <div 
-            ref={discoveriesRef}
-            className="flex overflow-x-auto snap-x snap-mandatory scrollbar-none gap-4 py-2 -mx-4 px-4 md:mx-0 md:px-0 scroll-smooth"
-          >
-            {FEATURED_DISCOVERIES.map((prod, i) => (
-              <div
-                key={i}
-                onClick={() => handleTrendingClick(prod.searchQuery)}
-                className="group flex items-center gap-5 border border-slate-100 bg-white p-5 rounded-2xl cursor-pointer hover:border-indigo-500/40 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 animate-slide-in-right shrink-0 w-[295px] md:w-[325px] snap-center"
-                style={{ animationDelay: `${i * 100}ms`, animationFillMode: 'both' }}
-              >
-                {/* Product Image / Fallback Icon */}
-                <div className="h-20 w-20 shrink-0 rounded-2xl border border-slate-100 bg-slate-50 flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:border-indigo-100">
-                  {prod.image ? (
-                    <img 
-                      src={prod.image} 
-                      alt={prod.name} 
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-108"
-                    />
-                  ) : (
-                    <svg className="h-8 w-8 text-slate-300 group-hover:text-indigo-300 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                  )}
-                </div>
-                {/* Details */}
-                <div className="flex flex-col gap-1 overflow-hidden text-left flex-grow">
-                  <span className="text-[10.5px] font-extrabold tracking-wider uppercase text-indigo-500">{prod.type}</span>
-                  <h4 className="text-sm font-extrabold text-slate-800 truncate tracking-wide">{prod.name}</h4>
-                  <div className="flex items-baseline gap-1.5 mt-0.5">
-                    <span className="text-sm font-black text-slate-800 shrink-0">{formatINR(prod.price)}</span>
-                    <span className="text-[9px] font-extrabold tracking-wider text-slate-400 uppercase truncate">
-                      on {prod.platform}
+          {/* Conveyor Belt Marquee wrapper */}
+          <div className="w-full overflow-hidden py-4 relative mt-2">
+            {/* Soft gradient fade overlays on left and right for seamless look */}
+            <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none"></div>
+            
+            <div className="flex animate-marquee gap-5">
+              {[...FEATURED_DISCOVERIES, ...FEATURED_DISCOVERIES].map((prod, i) => (
+                <div
+                  key={i}
+                  onClick={() => handleTrendingClick(prod.searchQuery)}
+                  className="group w-[240px] shrink-0 border border-slate-100 bg-white rounded-2xl cursor-pointer hover:border-indigo-500/40 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 flex flex-col overflow-hidden text-left"
+                >
+                  {/* Top: Large image area */}
+                  <div className="h-[140px] w-full bg-slate-50 flex items-center justify-center overflow-hidden relative">
+                    {prod.image ? (
+                      <img 
+                        src={prod.image} 
+                        alt={prod.name} 
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    ) : (
+                      <svg className="h-8 w-8 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                      </svg>
+                    )}
+                    {/* Category Tag overlay on top left */}
+                    <span className="absolute left-3.5 top-3.5 text-[8px] font-black tracking-widest uppercase bg-indigo-600 text-white px-2 py-0.5 rounded shadow-sm z-10">
+                      {prod.type}
                     </span>
                   </div>
+                  
+                  {/* Bottom: Details block */}
+                  <div className="flex flex-col p-4.5 gap-2.5 flex-grow justify-between bg-white border-t border-slate-50">
+                    <div className="flex flex-col gap-0.5">
+                      <h4 className="text-[13px] font-bold text-slate-800 line-clamp-1 tracking-wide group-hover:text-indigo-650 transition-colors">{prod.name}</h4>
+                      <p className="text-[9.5px] text-slate-400 font-semibold uppercase tracking-wider mt-0.5">
+                        Lowest on {prod.platform}
+                      </p>
+                    </div>
+                    
+                    <div className="flex items-center justify-between border-t border-slate-100/60 pt-3 mt-1">
+                      <span className="text-[9.5px] text-slate-400 font-bold uppercase tracking-wider">Compare From</span>
+                      <span className="text-sm font-black text-indigo-600">{formatINR(prod.price)}</span>
+                    </div>
+                  </div>
                 </div>
-                <div className="text-slate-300 group-hover:text-indigo-600 transition-colors pr-1">
-                  <svg className="h-4.5 w-4.5 transform group-hover:translate-x-1 transition-transform stroke-[2.5]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
 
