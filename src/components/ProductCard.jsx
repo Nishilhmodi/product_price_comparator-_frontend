@@ -102,25 +102,28 @@ export function ProductCard({ product }) {
                 href={offer.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`flex items-center justify-between px-3 py-1.5 rounded-xl transition-all duration-200 border cursor-pointer ${
+                className={`grid grid-cols-[auto_1fr_auto] items-center gap-1.5 px-2.5 py-1.5 rounded-xl transition-all duration-200 border cursor-pointer text-left ${
                   isLowest 
                     ? "bg-emerald-50/50 border-emerald-500/20 text-emerald-700 hover:bg-emerald-600 hover:text-white hover:border-emerald-600 shadow-[0_1px_2px_rgba(16,185,129,0.03)]" 
                     : "bg-white border-slate-100 text-slate-700 hover:border-indigo-500/30 hover:bg-indigo-50/10 hover:text-indigo-700 shadow-[0_1px_2px_rgba(0,0,0,0.01)]"
                 }`}
               >
-                <div className="flex items-center gap-2">
-                  <img 
-                    src={`https://www.google.com/s2/favicons?sz=64&domain=${getPlatformDomain(platform)}`} 
-                    alt={platform} 
-                    className="h-3.5 w-3.5 object-contain rounded" 
-                  />
-                  <span className="text-[10px] font-bold uppercase tracking-wider">{platform}</span>
-                </div>
-                <div className="flex items-center gap-2">
+                {/* 1. Favicon */}
+                <img 
+                  src={`https://www.google.com/s2/favicons?sz=64&domain=${getPlatformDomain(platform)}`} 
+                  alt={platform} 
+                  className="h-3.5 w-3.5 object-contain rounded shrink-0" 
+                />
+                
+                {/* 2. Platform Name (Truncates to prevent collision) */}
+                <span className="text-[9.5px] font-bold uppercase tracking-wider truncate mr-1">{platform}</span>
+                
+                {/* 3. Badge & Price */}
+                <div className="flex items-center gap-1.5 justify-end shrink-0">
                   {isLowest && (
-                    <span className="text-[7.5px] font-extrabold uppercase tracking-widest bg-emerald-500 text-white px-1.5 py-0.5 rounded-md">Lowest</span>
+                    <span className="text-[7.5px] font-black uppercase tracking-wide bg-emerald-500 text-white px-1.5 py-0.5 rounded shrink-0">Lowest</span>
                   )}
-                  <span className="text-[11px] font-black">{formatINR(offer.price)}</span>
+                  <span className="text-[10.5px] font-black shrink-0">{formatINR(offer.price)}</span>
                 </div>
               </a>
             );
@@ -128,17 +131,20 @@ export function ProductCard({ product }) {
             return (
               <div
                 key={platform}
-                className="flex items-center justify-between px-3 py-1.5 rounded-xl border border-dashed border-slate-100 bg-white/40 text-slate-400 select-none opacity-70"
+                className="grid grid-cols-[auto_1fr_auto] items-center gap-1.5 px-2.5 py-1.5 rounded-xl border border-dashed border-slate-100 bg-white/40 text-slate-400 select-none opacity-70 text-left"
               >
-                <div className="flex items-center gap-2">
-                  <img 
-                    src={`https://www.google.com/s2/favicons?sz=64&domain=${getPlatformDomain(platform)}`} 
-                    alt={platform} 
-                    className="h-3.5 w-3.5 object-contain rounded grayscale opacity-45" 
-                  />
-                  <span className="text-[10px] font-semibold uppercase tracking-wider">{platform}</span>
-                </div>
-                <span className="text-[9.5px] font-bold text-slate-300 tracking-wide">N/A</span>
+                {/* 1. Favicon */}
+                <img 
+                  src={`https://www.google.com/s2/favicons?sz=64&domain=${getPlatformDomain(platform)}`} 
+                  alt={platform} 
+                  className="h-3.5 w-3.5 object-contain rounded grayscale opacity-45 shrink-0" 
+                />
+                
+                {/* 2. Platform Name */}
+                <span className="text-[9.5px] font-semibold uppercase tracking-wider truncate mr-1">{platform}</span>
+                
+                {/* 3. Status */}
+                <span className="text-[9.5px] font-bold text-slate-350 tracking-wide shrink-0 justify-self-end">N/A</span>
               </div>
             );
           }
