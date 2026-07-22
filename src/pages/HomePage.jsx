@@ -117,7 +117,8 @@ const FEATURED_DISCOVERIES = [
     platform: "Flipkart",
     type: "Electronics",
     searchQuery: "Carrier 1.5 Ton 5 Star Split AC",
-    image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=200&auto=format&fit=crop"
+    image: "/carrier_ac.png",
+    imageFit: "object-contain p-2 bg-white"
   },
   {
     name: "Minimalist Face Serum Essentials",
@@ -421,7 +422,7 @@ export function HomePage() {
                       <img 
                         src={prod.image} 
                         alt={prod.name} 
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        className={`h-full w-full ${prod.imageFit || 'object-cover'} transition-transform duration-500 group-hover:scale-105`}
                       />
                     ) : (
                       <svg className="h-8 w-8 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
