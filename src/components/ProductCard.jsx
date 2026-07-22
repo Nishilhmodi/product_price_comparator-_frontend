@@ -88,8 +88,8 @@ export function ProductCard({ product }) {
         )}
       </div>
 
-      {/* 2x2 Platform Buttons Grid */}
-      <div className="grid grid-cols-2 gap-1.5 p-2.5 bg-slate-50/30 border-b border-slate-100/60">
+      {/* 2x2 Platform Buttons Grid - Responsive layout for mobile (1 col flex-row) vs desktop (2 cols flex-col) */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 p-2.5 bg-slate-50/30 border-b border-slate-100/60">
         {['Amazon', 'Flipkart', 'Myntra', 'Ajio'].map((platform) => {
           const offer = getPlatformOffer(platform);
           const hasPrice = !!offer;
@@ -108,24 +108,22 @@ export function ProductCard({ product }) {
                 href={offer.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`flex flex-col items-start justify-center px-2.5 py-1.5 transition-all duration-200 text-left rounded-xl cursor-pointer ${btnStyle}`}
+                className={`flex items-center justify-between sm:flex-col sm:items-start sm:justify-center px-2.5 py-1.5 sm:py-2 transition-all duration-200 text-left rounded-xl cursor-pointer ${btnStyle}`}
               >
-                {/* Top Row: Platform name and Favicon */}
-                <div className="flex items-center gap-1.5 w-full justify-between">
-                  <span className="text-[9px] font-bold tracking-wider uppercase flex items-center gap-1.5">
-                    <img 
-                      src={`https://www.google.com/s2/favicons?sz=64&domain=${getPlatformDomain(platform)}`} 
-                      alt={platform} 
-                      className="h-3 w-3 object-contain rounded" 
-                    />
-                    {platform}
-                  </span>
+                {/* Left/Top: Platform name and Favicon */}
+                <div className="flex items-center gap-1.5">
+                  <img 
+                    src={`https://www.google.com/s2/favicons?sz=64&domain=${getPlatformDomain(platform)}`} 
+                    alt={platform} 
+                    className="h-3 w-3 object-contain rounded" 
+                  />
+                  <span className="text-[9px] font-bold tracking-wider uppercase">{platform}</span>
                   {offer.is_lowest && (
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 sm:inline-block hidden ml-1"></span>
                   )}
                 </div>
-                {/* Bottom Row: Price */}
-                <span className="text-[10.5px] font-black tracking-wide mt-1">
+                {/* Right/Bottom: Price */}
+                <span className="text-[10.5px] font-black tracking-wide sm:mt-1">
                   {formatINR(offer.price)}
                 </span>
               </a>
@@ -135,19 +133,19 @@ export function ProductCard({ product }) {
             return (
               <div
                 key={platform}
-                className="flex flex-col items-start justify-center px-2.5 py-1.5 text-left rounded-xl border border-slate-100/40 bg-slate-50/20 text-slate-350 select-none"
+                className="flex items-center justify-between sm:flex-col sm:items-start sm:justify-center px-2.5 py-1.5 sm:py-2 text-left rounded-xl border border-slate-100/40 bg-slate-50/20 text-slate-350 select-none"
               >
-                <div className="flex items-center gap-1.5 w-full justify-between">
-                  <span className="text-[9px] font-bold tracking-wider uppercase flex items-center gap-1.5 opacity-55">
-                    <img 
-                      src={`https://www.google.com/s2/favicons?sz=64&domain=${getPlatformDomain(platform)}`} 
-                      alt={platform} 
-                      className="h-3 w-3 object-contain rounded opacity-35 grayscale" 
-                    />
-                    {platform}
-                  </span>
+                {/* Left/Top: Platform name and Favicon */}
+                <div className="flex items-center gap-1.5 opacity-55">
+                  <img 
+                    src={`https://www.google.com/s2/favicons?sz=64&domain=${getPlatformDomain(platform)}`} 
+                    alt={platform} 
+                    className="h-3 w-3 object-contain rounded opacity-35 grayscale" 
+                  />
+                  <span className="text-[9px] font-bold tracking-wider uppercase">{platform}</span>
                 </div>
-                <span className="text-[10px] font-medium mt-1 opacity-55">
+                {/* Right/Bottom: Status */}
+                <span className="text-[9.5px] sm:text-[10px] font-medium sm:mt-1 opacity-55">
                   Not Available
                 </span>
               </div>
