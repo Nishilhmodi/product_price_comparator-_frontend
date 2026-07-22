@@ -4,22 +4,21 @@ export function SkeletonCard() {
       {/* TOP SECTION: Image Area (150px height) */}
       <div className="h-[150px] w-full bg-slate-200/50 border-b border-slate-100 animate-pulse"></div>
 
-      {/* 2x2 Platform Buttons Grid (directly under image) */}
-      <div className="grid grid-cols-2 gap-1.5 p-2 bg-slate-50/30 border-b border-slate-100">
+      {/* Clean vertical list comparison skeleton display */}
+      <div className="flex flex-col gap-1 p-2 bg-slate-50/30 border-b border-slate-100">
         {[...Array(4)].map((_, i) => (
           <div
             key={i}
-            className="flex flex-col items-start justify-center px-2.5 py-1.5 rounded-lg border border-slate-100 bg-white gap-1.5 h-[48px]"
+            className="grid grid-cols-[auto_1fr_auto] items-center gap-1.5 px-2 py-1 sm:px-2.5 sm:py-1.5 rounded-lg sm:rounded-xl border border-slate-100 bg-white h-[26px] sm:h-[34px]"
           >
-            {/* Top Row: Platform name dot and badge */}
-            <div className="flex items-center gap-1.5 w-full justify-between">
-              <div className="flex items-center gap-1">
-                <div className="h-1.5 w-1.5 rounded-full bg-slate-200 animate-pulse"></div>
-                <div className="h-2 w-10 bg-slate-200 rounded animate-pulse"></div>
-              </div>
-            </div>
-            {/* Bottom Row: Price */}
-            <div className="h-2.5 w-12 bg-slate-200 rounded animate-pulse"></div>
+            {/* 1. Favicon skeleton */}
+            <div className="h-3.5 w-3.5 rounded bg-slate-200/60 animate-pulse shrink-0"></div>
+            
+            {/* 2. Platform Name skeleton (Hidden on mobile) */}
+            <div className="h-2 w-12 bg-slate-200/60 rounded animate-pulse hidden sm:inline-block ml-1"></div>
+            
+            {/* 3. Price skeleton */}
+            <div className="h-2.5 w-10 bg-slate-200/60 rounded animate-pulse shrink-0 col-start-3 justify-self-end"></div>
           </div>
         ))}
       </div>
