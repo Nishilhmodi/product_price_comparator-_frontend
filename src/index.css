@@ -59,13 +59,12 @@
   box-shadow: 0 0 15px rgba(79, 70, 229, 0.15);
 }
 
-/* Infinite Scrolling Marquee */
 @keyframes marquee {
   0% {
-    transform: translateX(0%);
+    transform: translateX(-50%);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(0%);
   }
 }
 
@@ -73,10 +72,6 @@
   display: flex;
   width: max-content;
   animation: marquee 25s linear infinite;
-}
-
-.animate-marquee:hover {
-  animation-play-state: paused;
 }
 
 /* Custom Premium Animations */
