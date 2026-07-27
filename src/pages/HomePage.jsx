@@ -974,13 +974,14 @@ export function HomePage() {
               }
               .ph-stack-card {
                 position: sticky;
-                min-height: 480px;
-                border-radius: 20px;
-                padding: 40px;
+                min-height: 580px;
+                border-radius: 34px;
+                padding: 36px 64px;
                 margin-bottom: 0;
-                color: #111;
+                color: #fff;
                 overflow: hidden;
                 box-sizing: border-box;
+                box-shadow: 0 24px 50px rgba(72, 58, 150, 0.18);
               }
               /* Fallback nth-of-type rules (JS overrides these) */
               .ph-stack-card:nth-of-type(1) { top: 0px;   z-index: 1; }
@@ -988,83 +989,86 @@ export function HomePage() {
               .ph-stack-card:nth-of-type(3) { top: 80px;  z-index: 3; }
               .ph-stack-card:nth-of-type(4) { top: 120px; z-index: 4; }
 
+              .ph-stack-card::after {
+                content: '';
+                position: absolute;
+                width: 250px;
+                height: 250px;
+                border-radius: 50%;
+                right: -75px;
+                top: -145px;
+                background: rgba(255,255,255,0.09);
+              }
+              .ph-card-top { display: flex; justify-content: space-between; align-items: flex-start; position: relative; z-index: 1; }
               .ph-card-badge {
                 display: inline-block;
-                background: rgba(255,255,255,0.9);
-                color: #111;
-                font-size: 13px;
-                font-weight: 700;
-                padding: 5px 14px;
+                background: rgba(255,255,255,0.18);
+                color: #fff;
+                font-size: 15px;
+                font-weight: 800;
+                padding: 7px 18px;
                 border-radius: 20px;
-                margin-bottom: 18px;
                 letter-spacing: 0.04em;
               }
               .ph-card-icon {
-                width: 52px;
-                height: 52px;
-                background: rgba(255,255,255,0.9);
-                border-radius: 14px;
+                width: 60px;
+                height: 60px;
+                background: rgba(255,255,255,0.17);
+                border-radius: 18px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                margin-bottom: 18px;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+                color: #fff;
               }
+              .ph-card-icon svg { width: 32px; height: 32px; }
+              .ph-card-layout { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(300px, .75fr); align-items: center; gap: 64px; min-height: 420px; position: relative; z-index: 1; }
               .ph-card-title {
-                font-size: 30px;
-                font-weight: 800;
-                margin: 0 0 10px;
+                font-size: clamp(32px, 3.2vw, 48px);
+                font-weight: 900;
+                margin: 0 0 18px;
                 letter-spacing: -0.02em;
                 line-height: 1.2;
-                color: #0f172a;
+                color: #fff;
               }
               .ph-card-subtitle {
-                font-size: 13px;
-                font-weight: 600;
-                color: rgba(15,23,42,0.55);
-                margin: 0 0 24px;
+                font-size: 15px;
+                font-weight: 800;
+                color: rgba(255,255,255,0.75);
+                margin: 0 0 18px;
                 letter-spacing: 0.06em;
                 text-transform: uppercase;
               }
-              .ph-card-content {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 16px;
-              }
-              .ph-content-tile {
-                background: rgba(255,255,255,0.82);
-                border-radius: 14px;
-                min-height: 150px;
-                padding: 20px;
-                font-size: 14px;
-                line-height: 1.6;
-                color: #334155;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                gap: 10px;
-                backdrop-filter: blur(4px);
-                box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-              }
-              .ph-content-tile strong {
-                font-size: 13px;
-                font-weight: 800;
-                color: #0f172a;
-                letter-spacing: 0.02em;
-                text-transform: uppercase;
-              }
+              .ph-card-description { max-width: 530px; font-size: 18px; font-weight: 500; line-height: 1.72; color: rgba(255,255,255,0.88); margin: 0 0 28px; }
+              .ph-card-chips { display: flex; flex-wrap: wrap; gap: 12px; }
+              .ph-card-chip { background: rgba(255,255,255,0.18); padding: 9px 17px; border-radius: 999px; color: #fff; font-size: 14px; font-weight: 800; }
+              .ph-visual { min-height: 360px; padding: 28px; border: 1px solid rgba(255,255,255,0.34); border-radius: 26px; background: rgba(255,255,255,0.08); display: flex; flex-direction: column; justify-content: center; gap: 12px; box-shadow: inset 0 1px rgba(255,255,255,0.12); }
+              .ph-browser { background: rgba(255,255,255,0.22); border-radius: 16px; overflow: hidden; padding: 12px; }
+              .ph-browser-bar { height: 26px; border-radius: 10px 10px 0 0; background: rgba(255,255,255,.22); margin: -12px -12px 12px; }
+              .ph-demo-row { padding: 10px 12px; margin-top: 8px; border-radius: 10px; background: rgba(255,255,255,.93); color: #f43f5e; font-size: 12px; font-weight: 800; display: flex; justify-content: space-between; }
+              .ph-status { border-radius: 999px; padding: 3px 7px; background: #ff2d5e; color: #fff; font-size: 9px; }
+              .ph-orbit { align-self: center; width: 100px; height: 100px; border: 2px solid rgba(255,255,255,.22); border-radius: 50%; display: grid; place-items: center; margin: 14px 0; }
+              .ph-orbit-inner { width: 56px; height: 56px; display: grid; place-items: center; border-radius: 50%; border: 2px solid rgba(255,255,255,.65); background: rgba(255,255,255,.16); color: #ff944d; font-size: 25px; }
+              .ph-network { display: flex; justify-content: space-between; }
+              .ph-network span, .ph-latency { padding: 7px 12px; border-radius: 999px; background: rgba(255,255,255,.92); color: #4f46b8; font-size: 12px; font-weight: 800; }
+              .ph-latency { align-self: center; }
+              .ph-raw, .ph-match { background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.28); padding: 12px; border-radius: 12px; color: #fff; font-size: 12px; font-weight: 700; }
+              .ph-match { background: rgba(255,255,255,.94); color: #047857; display: flex; justify-content: space-between; }
+              .ph-check { align-self: center; width: 38px; height: 38px; display: grid; place-items: center; border: 2px solid rgba(255,255,255,.55); border-radius: 50%; font-weight: 900; }
+              .ph-compare-title { color: rgba(255,255,255,.82); font-size: 12px; font-weight: 900; }
+              .ph-price { background: rgba(255,255,255,.94); color: #64748b; padding: 12px; border-radius: 12px; display: flex; justify-content: space-between; font-size: 12px; font-weight: 800; }
+              .ph-price:first-of-type { color: #059669; border: 1px solid #86efac; }
               .ph-stack-spacer { height: 200px; }
 
               /* ── Gradient themes matching the reference ── */
-              .ph-theme-1 { background: linear-gradient(135deg, #B5D4F4 0%, #AFA9EC 100%); }
-              .ph-theme-2 { background: linear-gradient(135deg, #9FE1CB 0%, #7F77DD 100%); }
-              .ph-theme-3 { background: linear-gradient(135deg, #FAC775 0%, #EAF3DE 100%); }
-              .ph-theme-4 { background: linear-gradient(135deg, #AFA9EC 0%, #FAC775 100%); }
+              .ph-theme-1 { background: linear-gradient(125deg, #fdb4bd 0%, #fb355b 100%); }
+              .ph-theme-2 { background: linear-gradient(125deg, #bfc6ff 0%, #5953e8 100%); }
+              .ph-theme-3 { background: linear-gradient(125deg, #93e8ca 0%, #05b982 100%); }
+              .ph-theme-4 { background: linear-gradient(125deg, #cfbdff 0%, #7532e8 100%); }
 
               /* ── Responsive ── */
               @media (max-width: 640px) {
                 .ph-stack-card {
-                  min-height: 380px;
+                  min-height: 570px;
                   padding: 24px;
                   border-radius: 16px;
                 }
@@ -1072,8 +1076,10 @@ export function HomePage() {
                 .ph-stack-card:nth-of-type(2) { top: 20px; }
                 .ph-stack-card:nth-of-type(3) { top: 40px; }
                 .ph-stack-card:nth-of-type(4) { top: 60px; }
-                .ph-card-title { font-size: 22px; }
-                .ph-card-content { grid-template-columns: 1fr; }
+                .ph-card-layout { grid-template-columns: 1fr; gap: 24px; min-height: auto; padding-top: 36px; }
+                .ph-card-title { font-size: 29px; }
+                .ph-card-description { font-size: 16px; }
+                .ph-visual { min-height: 250px; padding: 20px; }
               }
             `}</style>
 
@@ -1099,6 +1105,12 @@ export function HomePage() {
 
               {STORY_SLIDES.map((slide, idx) => {
                 const themes = ['ph-theme-1', 'ph-theme-2', 'ph-theme-3', 'ph-theme-4'];
+                const cardChips = [
+                  ['10 Browser Tabs', 'Price Chaos', 'No More!'],
+                  ['2s Query Time', 'Live Prices', 'Real-time'],
+                  ['NLP Engine', 'Smart Match', 'Normalized'],
+                  ['0% Markup', '0% Fees', 'Your Wallet First'],
+                ];
                 const tileData = [
                   /* Card 1 — The Problem */
                   [
@@ -1128,28 +1140,27 @@ export function HomePage() {
                     className={`ph-stack-card ${themes[idx % themes.length]}`}
                     data-ph-stack-index={idx}
                   >
-                    {/* Badge pill */}
-                    <span className="ph-card-badge">
-                      {idx + 1}/{STORY_SLIDES.length}
-                    </span>
-
-                    {/* Icon */}
-                    <div className="ph-card-icon">
-                      {slide.icon}
+                    <div className="ph-card-top">
+                      <span className="ph-card-badge">{idx + 1}/{STORY_SLIDES.length}</span>
+                      <div className="ph-card-icon">{slide.icon}</div>
                     </div>
 
-                    {/* Title + subtitle */}
-                    <h2 className="ph-card-title">{slide.title}</h2>
-                    <p className="ph-card-subtitle">{slide.subtitle}</p>
-
-                    {/* Content tiles */}
-                    <div className="ph-card-content">
-                      {tileData[idx].map((tile, ti) => (
-                        <div key={ti} className="ph-content-tile">
-                          <strong>{tile.label}</strong>
-                          <span>{tile.body}</span>
+                    <div className="ph-card-layout">
+                      <div>
+                        <p className="ph-card-subtitle">{slide.subtitle}</p>
+                        <h2 className="ph-card-title">{slide.title}</h2>
+                        <p className="ph-card-description">{slide.description}</p>
+                        <div className="ph-card-chips">
+                          {cardChips[idx].map((chip) => <span key={chip} className="ph-card-chip">{chip}</span>)}
                         </div>
-                      ))}
+                      </div>
+
+                      <div className="ph-visual">
+                        {idx === 0 && <div className="ph-browser"><div className="ph-browser-bar" />{['Amazon.in — Crashed 502', 'Flipkart — Timed Out 408', 'Myntra — Stale Price'].map((label) => <div key={label} className="ph-demo-row"><span>{label}</span><span className="ph-status">ERR</span></div>)}</div>}
+                        {idx === 1 && <><div className="ph-network"><span>Amazon</span><span>Flipkart</span></div><div className="ph-orbit"><div className="ph-orbit-inner">ϟ</div></div><div className="ph-network"><span>Myntra</span><span>Ajio</span></div><span className="ph-latency">Latency: 1.82s</span></>}
+                        {idx === 2 && <><div className="ph-raw">Amazon: “Galaxy S23 Luxe Grey”</div><div className="ph-check">✓</div><div className="ph-match"><span>Samsung Galaxy S23 5G</span><span>Matched</span></div></>}
+                        {idx === 3 && <><div className="ph-compare-title">LIVE PRICE COMPARISON</div><div className="ph-price"><span>1. Flipkart (Cheapest)</span><span>₹12,499</span></div><div className="ph-price"><span>2. Amazon</span><span>₹12,999</span></div><div className="ph-raw">🛡️ &nbsp; 0% Markups · 0% Fees</div></>}
+                      </div>
                     </div>
                   </div>
                 );
