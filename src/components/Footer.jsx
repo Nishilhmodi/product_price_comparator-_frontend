@@ -16,12 +16,12 @@ export function Footer() {
               <svg className="h-5.5 w-5.5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M7 7h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
-              <div className="flex items-center text-lg font-extrabold tracking-tight">
+              <div className="flex items-center text-xl font-extrabold tracking-tight">
                 <span className="text-slate-900">Price</span>
                 <span className="text-indigo-600">Hunt</span>
               </div>
             </Link>
-            <p className="text-xs md:text-sm text-slate-400 font-medium leading-relaxed max-w-sm mt-1">
+            <p className="text-sm md:text-base text-slate-400 font-medium leading-relaxed max-w-sm mt-1">
               India's smartest live price comparison engine. We parse and group real-time offers across top e-commerce platforms to help you find the absolute best deals.
             </p>
             {/* Social Icons */}
@@ -55,10 +55,10 @@ export function Footer() {
 
           {/* Quick Links - spans 3 columns */}
           <div className="md:col-span-3 flex flex-col gap-4">
-            <h4 className="text-xs font-black text-slate-800 uppercase tracking-widest">
+            <h4 className="text-sm font-black text-slate-800 uppercase tracking-widest">
               Navigation
             </h4>
-            <div className="flex flex-col gap-2.5 text-[13px] font-semibold text-slate-500">
+            <div className="flex flex-col gap-2.5 text-[15px] font-semibold text-slate-500">
               <Link to="/" className="hover:text-indigo-600 transition-colors">Home Page</Link>
               <Link to="/how-it-works" className="hover:text-indigo-600 transition-colors">How it works</Link>
               <a href="#trending" className="hover:text-indigo-600 transition-colors">Trending Deals</a>
@@ -68,7 +68,7 @@ export function Footer() {
 
           {/* Supported Stores - spans 4 columns */}
           <div className="md:col-span-4 flex flex-col gap-4">
-            <h4 className="text-xs font-black text-slate-800 uppercase tracking-widest">
+            <h4 className="text-sm font-black text-slate-800 uppercase tracking-widest">
               Supported Merchants
             </h4>
             <div className="grid grid-cols-2 gap-3">
@@ -80,7 +80,7 @@ export function Footer() {
               ].map((store) => (
                 <div 
                   key={store.name}
-                  className="flex items-center gap-2 border border-slate-50 bg-slate-50/30 px-3 py-2 rounded-xl text-xs font-bold text-slate-600"
+                  className="flex items-center gap-2 border border-slate-50 bg-slate-50/30 px-3 py-2 rounded-xl text-sm font-bold text-slate-600"
                 >
                   <img 
                     src={`https://www.google.com/s2/favicons?sz=64&domain=${store.domain}`} 
@@ -97,17 +97,17 @@ export function Footer() {
         {/* Divider & Bottom Section */}
         <div className="border-t border-slate-100/80 pt-10 flex flex-col gap-6">
           {/* Price Variation Disclaimer */}
-          <div className="text-[10px] leading-relaxed text-slate-400 font-medium">
+          <div className="text-sm md:text-base leading-relaxed text-slate-400 font-medium">
             <span className="font-extrabold text-slate-600 uppercase tracking-widest">Live Pricing Disclaimer: </span>
             Product prices and availability are pulled in real time via live merchant search indexes and are accurate as of the timestamp shown. Any price and stock status displayed on the merchant's checkout page at the time of purchase will apply. PriceHunt is a search comparison utility and does not process transactions directly.
           </div>
 
           {/* Copyright Row */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-[11px] font-bold text-slate-700 tracking-wider uppercase">
+            <p className="text-[13px] font-bold text-slate-700 tracking-wider uppercase">
               &copy; {new Date().getFullYear()} PriceHunt. All rights reserved.
             </p>
-            <div className="flex items-center gap-6 text-[11px] font-bold text-slate-400 uppercase tracking-wider">
+            <div className="flex items-center gap-6 text-[13px] font-bold text-slate-400 uppercase tracking-wider">
               <a href="#privacy" className="hover:text-indigo-600 transition-colors">Privacy Policy</a>
               <a href="#terms" className="hover:text-indigo-600 transition-colors">Terms of Service</a>
               <button 

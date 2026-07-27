@@ -89,7 +89,7 @@ export function HowItWorksPage() {
         <div className="mb-6 animate-fade-in-up">
           <Link 
             to="/" 
-            className="inline-flex items-center gap-2 text-[11px] font-extrabold uppercase tracking-wider text-slate-500 hover:text-indigo-650 transition-colors group cursor-pointer"
+            className="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-slate-500 hover:text-indigo-650 transition-colors group cursor-pointer"
           >
             <svg 
               className="h-4 w-4 transform group-hover:-translate-x-0.5 transition-transform text-slate-400 group-hover:text-indigo-655" 
@@ -106,7 +106,7 @@ export function HowItWorksPage() {
 
         {/* Page Header Hero */}
         <div className="text-center max-w-4xl mx-auto mb-16 animate-fade-in-up">
-          <span className="text-[10px] font-bold tracking-widest uppercase text-indigo-600 bg-indigo-50 border border-indigo-100 px-4 py-1.5 rounded-full shadow-sm">
+          <span className="text-xs font-bold tracking-widest uppercase text-indigo-600 bg-indigo-50 border border-indigo-100 px-4 py-1.5 rounded-full shadow-sm">
             How it works
           </span>
           <h1 className="text-3xl md:text-5xl font-black tracking-tight text-slate-900 mt-4 leading-tight">
@@ -134,9 +134,9 @@ export function HowItWorksPage() {
               <div className="flex flex-col gap-1.5">
                 <div className="flex items-center justify-between">
                   <h3 className="font-bold text-slate-800 text-base">{step.title}</h3>
-                  <span className="text-xs font-black text-indigo-200 tracking-wider uppercase">{step.num}</span>
+                  <span className="text-sm font-black text-indigo-200 tracking-wider uppercase">{step.num}</span>
                 </div>
-                <p className="text-xs text-slate-500 font-medium leading-relaxed">
+                <p className="text-sm text-slate-500 font-medium leading-relaxed">
                   {step.description}
                 </p>
               </div>
@@ -146,7 +146,7 @@ export function HowItWorksPage() {
 
         {/* FAQ Section */}
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-black tracking-tight text-slate-900 text-center mb-8">
+          <h2 className="text-3xl font-black tracking-tight text-slate-900 text-center mb-8">
             Frequently Asked Questions
           </h2>
           <div className="flex flex-col gap-4">
@@ -178,7 +178,7 @@ export function HowItWorksPage() {
                     }`}
                   >
                     <div className="overflow-hidden">
-                      <p className="text-xs md:text-sm text-slate-500 font-medium leading-relaxed border-t border-slate-100 pt-4 mt-1">
+                      <p className="text-sm md:text-base text-slate-500 font-medium leading-relaxed border-t border-slate-100 pt-4 mt-1">
                         {faq.answer}
                       </p>
                     </div>
