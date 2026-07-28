@@ -408,7 +408,7 @@ export function HomePage() {
 
       {/* Hero Banner Section */}
       <section 
-        className="w-full px-4 min-h-[calc(100vh-62px)] flex items-center justify-center relative z-10 py-6 lg:py-10"
+        className="w-full px-5 sm:px-6 min-h-[calc(100vh-62px)] flex items-center justify-center relative z-10 py-10 sm:py-12 lg:py-10"
         style={{
           backgroundImage: `
             radial-gradient(circle at center, transparent 20%, rgba(248, 250, 252, 1) 85%),
@@ -420,27 +420,27 @@ export function HomePage() {
           clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 48px), 0 100%)'
         }}
       >
-        <div className="mx-auto max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center px-4 md:px-8 py-4 lg:py-6">
+        <div className="mx-auto max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center px-0 md:px-8 py-4 lg:py-6">
           
           {/* Left Column: Heading, Subheading, Search Bar, CTA */}
-          <div className="lg:col-span-6 flex flex-col items-center text-center lg:items-start lg:text-left gap-6 animate-fade-in-up">
+          <div className="lg:col-span-6 flex flex-col items-center text-center lg:items-start lg:text-left gap-7 sm:gap-8 animate-fade-in-up">
             {/* Subtle Accent Badge */}
-            <span className="text-[10px] font-bold tracking-widest uppercase text-indigo-700 bg-indigo-50/80 border border-indigo-100/60 px-4 py-1.5 rounded-full shadow-sm backdrop-blur-sm">
+            <span className="text-[11px] sm:text-xs font-bold tracking-widest uppercase text-indigo-700 bg-indigo-50/80 border border-indigo-100/60 px-5 py-2 rounded-full shadow-sm backdrop-blur-sm">
               Live retail price comparator
             </span>
 
             {/* Title */}
-            <h1 className="text-3.5xl sm:text-4.5xl md:text-5.5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-[1.12] max-w-2xl">
+            <h1 className="text-4xl min-[420px]:text-5xl sm:text-5xl md:text-5.5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-[1.08] max-w-2xl">
               Your shortcut to finding a <span className="bg-gradient-to-r from-indigo-600 via-indigo-500 to-indigo-700 bg-clip-text text-transparent">great deal.</span>
             </h1>
 
             {/* Subtitle */}
-            <p className="text-sm md:text-[14.5px] text-slate-500 max-w-xl font-semibold leading-relaxed mx-auto lg:mx-0">
+            <p className="text-base sm:text-lg md:text-[14.5px] text-slate-500 max-w-xl font-semibold leading-relaxed mx-auto lg:mx-0">
               Instantly match product prices across e-commerce giants in India: Amazon, Flipkart, Myntra, and Ajio. Search once, compare everywhere.
             </p>
 
             {/* Glassmorphic Search Bar Container */}
-            <div className="w-full max-w-xl p-3 bg-white/60 backdrop-blur-xl border border-white/80 rounded-3xl shadow-lg hover:shadow-xl hover:border-white transition-all duration-500 relative z-30 mx-auto lg:mx-0">
+            <div className="w-full max-w-xl p-3.5 sm:p-4 bg-white/60 backdrop-blur-xl border border-white/80 rounded-3xl shadow-lg hover:shadow-xl hover:border-white transition-all duration-500 relative z-30 mx-auto lg:mx-0">
               <SearchBar onSearch={handleSearchSubmit} />
             </div>
 
@@ -451,20 +451,20 @@ export function HomePage() {
                   const inputEl = document.querySelector('input[placeholder*="Search for products"]');
                   if (inputEl) inputEl.focus();
                 }}
-                className="bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold tracking-wider uppercase px-7 py-3.5 rounded-xl transition-all duration-200 cursor-pointer shadow-md hover:-translate-y-0.5 active:translate-y-0"
+                className="bg-slate-900 hover:bg-slate-800 text-white text-sm font-bold tracking-wider uppercase px-8 py-4 rounded-xl transition-all duration-200 cursor-pointer shadow-md hover:-translate-y-0.5 active:translate-y-0"
               >
                 Start Comparing Now
               </button>
               <a 
                 href="#how-it-works"
-                className="text-xs font-black tracking-wider uppercase text-slate-500 hover:text-indigo-650 transition-colors flex items-center gap-1.5 py-2 cursor-pointer"
+                className="text-sm font-black tracking-wider uppercase text-slate-500 hover:text-indigo-650 transition-colors flex items-center gap-1.5 py-2 cursor-pointer"
               >
                 Learn Methodology &rarr;
               </a>
             </div>
 
             {/* Supported Merchant Badges with Original Logos */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-4 w-full">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-5 w-full">
               {[
                 { domain: 'amazon.in',   label: 'Amazon'   },
                 { domain: 'flipkart.com', label: 'Flipkart' },
@@ -473,7 +473,7 @@ export function HomePage() {
               ].map(({ domain, label }) => (
                 <span
                   key={label}
-                  className="flex items-center justify-center gap-2 bg-white border border-slate-100/90 text-slate-650 hover:text-slate-800 py-2.5 px-3 rounded-xl text-xs sm:text-[11px] font-black tracking-widest uppercase shadow-xs transition-all duration-200 cursor-default hover:border-slate-200 hover:shadow-sm"
+                  className="flex items-center justify-center gap-2 bg-white border border-slate-100/90 text-slate-650 hover:text-slate-800 py-3.5 px-3 rounded-xl text-[12px] sm:text-[11px] font-black tracking-widest uppercase shadow-xs transition-all duration-200 cursor-default hover:border-slate-200 hover:shadow-sm"
                 >
                   <img
                     src={`https://www.google.com/s2/favicons?sz=64&domain=${domain}`}
@@ -488,10 +488,10 @@ export function HomePage() {
           </div>
 
           {/* Right Column: Animated Visual (Phone + Floating Cards) */}
-          <div className="lg:col-span-6 flex items-center justify-center relative w-full h-[340px] min-[360px]:h-[380px] min-[400px]:h-[420px] sm:h-[480px] lg:h-[540px] select-none">
+          <div className="lg:col-span-6 flex items-center justify-center relative w-full h-[390px] min-[360px]:h-[430px] min-[400px]:h-[460px] sm:h-[500px] lg:h-[540px] select-none">
             
             {/* Responsive scale wrapper for mobile sizing */}
-            <div className="relative flex items-center justify-center scale-[0.58] min-[360px]:scale-[0.64] min-[400px]:scale-[0.72] sm:scale-85 md:scale-95 lg:scale-100 origin-center transition-transform duration-300">
+            <div className="relative flex items-center justify-center scale-[0.65] min-[360px]:scale-[0.70] min-[400px]:scale-[0.78] sm:scale-90 md:scale-95 lg:scale-100 origin-center transition-transform duration-300">
               
               {/* Ambient Backlight Glow behind phone */}
               <div className={`absolute h-72 w-72 rounded-full bg-indigo-500/10 blur-[100px] transition-all duration-1000 ${
@@ -807,61 +807,6 @@ export function HomePage() {
       {/* Main Container */}
       <main className="mx-auto w-full max-w-7xl px-4 py-10 flex flex-col gap-20 relative z-10">
         
-        {/* Onboarding Steps */}
-        <section className="flex flex-col gap-6 text-center">
-          <div className="flex flex-col items-center gap-2">
-            <span className="text-xs font-bold tracking-widest uppercase text-indigo-600">Quick Guide</span>
-            <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">How it Works</h2>
-            <div className="h-1.5 w-12 bg-indigo-600 rounded-full mt-1.5"></div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 w-full text-left">
-            <div 
-              className="flex flex-col gap-3 bg-white/80 backdrop-blur-md border border-slate-100 rounded-2xl p-6 shadow-sm hover:-translate-y-1 hover:shadow-lg hover:border-indigo-500/40 transition-all duration-300 group animate-scale-in"
-              style={{ animationDelay: '100ms', animationFillMode: 'both' }}
-            >
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-50 text-indigo-600 text-2xl font-black group-hover:scale-105 transition-all duration-300 shadow-sm border border-indigo-100">
-                1
-              </div>
-              <h3 className="font-extrabold text-slate-900 text-base md:text-[16px] uppercase tracking-wider mt-2.5">Search Products</h3>
-              <p className="text-slate-500 text-[15px] leading-relaxed mt-0.5">
-                Enter any brand, model, or category you wish to compare.
-              </p>
-            </div>
-            <div 
-              className="flex flex-col gap-3 bg-white/80 backdrop-blur-md border border-slate-100 rounded-2xl p-6 shadow-sm hover:-translate-y-1 hover:shadow-lg hover:border-blue-500/40 transition-all duration-300 group animate-scale-in"
-              style={{ animationDelay: '250ms', animationFillMode: 'both' }}
-            >
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-blue-600 text-2xl font-black group-hover:scale-105 transition-all duration-300 shadow-sm border border-blue-100">
-                2
-              </div>
-              <h3 className="font-extrabold text-slate-900 text-base md:text-[16px] uppercase tracking-wider mt-2.5">Compare Live Stores</h3>
-              <p className="text-slate-500 text-[15px] leading-relaxed mt-0.5">
-                We aggregate and group identical items across India's largest retail stores side by side.
-              </p>
-            </div>
-            <div 
-              className="flex flex-col gap-3 bg-white/80 backdrop-blur-md border border-slate-100 rounded-2xl p-6 shadow-sm hover:-translate-y-1 hover:shadow-lg hover:border-teal-500/40 transition-all duration-300 group animate-scale-in"
-              style={{ animationDelay: '400ms', animationFillMode: 'both' }}
-            >
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-teal-50 text-teal-655 text-2xl font-black group-hover:scale-105 transition-all duration-300 shadow-sm border border-teal-100">
-                3
-              </div>
-              <h3 className="font-extrabold text-slate-900 text-base md:text-[16px] uppercase tracking-wider mt-2.5">Acquire Best Deal</h3>
-              <p className="text-slate-500 text-[15px] leading-relaxed mt-0.5">
-                Compare prices, select the lowest merchant offering, and navigate directly to their official store.
-              </p>
-            </div>
-          </div>
-
-          {/* Quick Legal Disclaimers Banner */}
-          <div className="border border-slate-100 rounded-2xl bg-white p-5 md:p-6 text-left flex flex-col gap-2.5 text-sm md:text-[15px] text-slate-500 leading-relaxed shadow-sm mt-4 animate-scale-in" style={{ animationDelay: '500ms', animationFillMode: 'both' }}>
-            <p>
-              <span className="font-extrabold text-slate-750 tracking-wider uppercase pr-1.5">Prices May Vary Disclaimer:</span> Prices and availability of products are subject to change. Any price and availability information displayed on the merchant site at the time of purchase will apply.
-            </p>
-          </div>
-        </section>
-        
         {/* Curated Collections Section */}
         <section className="flex flex-col gap-6 text-center">
           <div className="flex flex-col items-center gap-2">
@@ -899,28 +844,43 @@ export function HomePage() {
       </main>
 
       {/* Featured Discoveries (Trending) - Full Width Section */}
-      <section className="flex flex-col gap-6 w-full overflow-hidden py-12 bg-slate-50/20 border-y border-slate-100/50 relative z-10">
-        <div className="mx-auto w-full max-w-7xl px-4 flex flex-col items-center gap-2 text-center">
-          <span className="text-xs font-bold tracking-widest uppercase text-indigo-600">Trending Finds</span>
-          <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">Featured Discoveries</h2>
-          <div className="h-1.5 w-12 bg-indigo-600 rounded-full mt-1.5"></div>
+      <section
+        className="flex flex-col gap-8 w-full overflow-hidden py-20 bg-[#080d18] border-y border-indigo-400/15 relative z-10 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]"
+        style={{
+          backgroundImage: 'linear-gradient(rgba(148,163,184,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,.06) 1px, transparent 1px), radial-gradient(circle at 18% 52%, rgba(79,70,229,.20), transparent 28%), radial-gradient(circle at 82% 58%, rgba(20,184,166,.13), transparent 30%)',
+          backgroundSize: '48px 48px, 48px 48px, auto, auto',
+        }}
+      >
+        <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-60" aria-hidden="true">
+          <svg className="absolute -right-10 -top-20 h-[420px] w-[620px] text-indigo-200/20" viewBox="0 0 620 420" fill="none">
+            <path d="M85 80 160 35l75 45v88l-75 44-75-44V80Zm150 88 75-44 75 44v88l-75 44-75-44v-88Zm150-88 75-45 75 45v88l-75 44-75-44V80Zm-75 176 75-44 75 44v88l-75 44-75-44v-88Z" stroke="currentColor" strokeWidth="1.5" />
+            <path d="M0 280 85 230l75 50m75-112 75-44m0 220 75-44 75 44m0-176 75-44 85 50" stroke="currentColor" strokeWidth="1.5" />
+            {[['85','80'],['235','168'],['385','80'],['460','300'],['535','124']].map(([cx, cy]) => <circle key={`${cx}-${cy}`} cx={cx} cy={cy} r="5" fill="currentColor" />)}
+          </svg>
+          <div className="absolute left-[8%] top-[30%] h-2 w-2 rounded-full bg-teal-300 shadow-[0_0_20px_rgba(94,234,212,.9)] animate-pulse" />
+          <div className="absolute left-[26%] bottom-[18%] h-1.5 w-1.5 rounded-full bg-indigo-300 shadow-[0_0_18px_rgba(165,180,252,.9)] animate-pulse" />
+        </div>
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-4 flex flex-col items-center gap-2 text-center">
+          <span className="text-xs font-bold tracking-widest uppercase text-indigo-400">Trending Finds</span>
+          <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight">Featured Discoveries</h2>
+          <div className="h-1.5 w-12 bg-indigo-500 rounded-full mt-1.5"></div>
         </div>
 
           {/* Conveyor Belt Marquee wrapper */}
-          <div className="w-full overflow-hidden py-4 relative mt-2">
+          <div className="relative z-10 w-full overflow-hidden py-6 mt-3">
             {/* Soft gradient fade overlays on left and right for seamless look */}
-            <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-[#080d18] to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-[#080d18] to-transparent z-10 pointer-events-none"></div>
             
-            <div className="flex animate-marquee gap-5">
+            <div className="flex animate-marquee gap-7">
               {[...FEATURED_DISCOVERIES, ...FEATURED_DISCOVERIES].map((prod, i) => (
                 <div
                   key={i}
                   onClick={() => handleTrendingClick(prod.searchQuery)}
-                  className="group w-[240px] shrink-0 border border-slate-100 bg-white rounded-2xl cursor-pointer hover:border-indigo-500/40 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 flex flex-col overflow-hidden text-left"
+                  className="group w-[300px] shrink-0 border border-white/80 bg-white rounded-[1.35rem] cursor-pointer hover:border-indigo-400 hover:-translate-y-2 hover:shadow-[0_20px_42px_rgba(99,102,241,0.32)] transition-all duration-500 flex flex-col overflow-hidden text-left"
                 >
                   {/* Top: Large image area */}
-                  <div className="h-[140px] w-full bg-slate-50 flex items-center justify-center overflow-hidden relative">
+                  <div className="h-[180px] w-full bg-slate-50 flex items-center justify-center overflow-hidden relative">
                     {prod.image ? (
                       <img 
                         src={prod.image} 
@@ -939,17 +899,17 @@ export function HomePage() {
                   </div>
                   
                   {/* Bottom: Details block */}
-                  <div className="flex flex-col p-4.5 gap-2.5 flex-grow justify-between bg-white border-t border-slate-50">
+                  <div className="flex flex-col p-5 gap-3 flex-grow justify-between bg-white border-t border-slate-50">
                     <div className="flex flex-col gap-0.5">
-                      <h4 className="text-[13px] font-bold text-slate-800 line-clamp-1 tracking-wide group-hover:text-indigo-650 transition-colors">{prod.name}</h4>
-                      <p className="text-[9.5px] text-slate-400 font-semibold uppercase tracking-wider mt-0.5">
+                      <h4 className="text-[15px] font-bold text-slate-800 line-clamp-1 tracking-wide group-hover:text-indigo-650 transition-colors">{prod.name}</h4>
+                      <p className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider mt-0.5">
                         Lowest on {prod.platform}
                       </p>
                     </div>
                     
-                    <div className="flex items-center justify-between border-t border-slate-100/60 pt-3 mt-1">
-                      <span className="text-[9.5px] text-slate-400 font-bold uppercase tracking-wider">Compare From</span>
-                      <span className="text-sm font-black text-indigo-600">{formatINR(prod.price)}</span>
+                    <div className="flex items-center justify-between border-t border-slate-100/60 pt-3.5 mt-1">
+                      <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Compare From</span>
+                      <span className="text-base font-black text-indigo-600">{formatINR(prod.price)}</span>
                     </div>
                   </div>
                 </div>
@@ -983,11 +943,11 @@ export function HomePage() {
                 box-sizing: border-box;
                 box-shadow: 0 24px 50px rgba(72, 58, 150, 0.18);
               }
-              /* Fallback nth-of-type rules (JS overrides these) */
-              .ph-stack-card:nth-of-type(1) { top: 0px;   z-index: 1; }
-              .ph-stack-card:nth-of-type(2) { top: 40px;  z-index: 2; }
-              .ph-stack-card:nth-of-type(3) { top: 80px;  z-index: 3; }
-              .ph-stack-card:nth-of-type(4) { top: 120px; z-index: 4; }
+              /* Sticky stack: panels pin below the navigation and reveal the next card's header. */
+              .ph-stack-card:nth-of-type(1) { top: 76px;  z-index: 1; }
+              .ph-stack-card:nth-of-type(2) { top: 112px; z-index: 2; }
+              .ph-stack-card:nth-of-type(3) { top: 148px; z-index: 3; }
+              .ph-stack-card:nth-of-type(4) { top: 184px; z-index: 4; }
 
               .ph-stack-card::after {
                 content: '';
@@ -1057,7 +1017,8 @@ export function HomePage() {
               .ph-compare-title { color: rgba(255,255,255,.82); font-size: 12px; font-weight: 900; }
               .ph-price { background: rgba(255,255,255,.94); color: #64748b; padding: 12px; border-radius: 12px; display: flex; justify-content: space-between; font-size: 12px; font-weight: 800; }
               .ph-price:first-of-type { color: #059669; border: 1px solid #86efac; }
-              .ph-stack-spacer { height: 200px; }
+              /* Extra runway lets the final card settle before normal content continues. */
+              .ph-stack-spacer { height: 420px; }
 
               /* ── Gradient themes matching the reference ── */
               .ph-theme-1 { background: linear-gradient(125deg, #fdb4bd 0%, #fb355b 100%); }
@@ -1072,10 +1033,10 @@ export function HomePage() {
                   padding: 24px;
                   border-radius: 16px;
                 }
-                .ph-stack-card:nth-of-type(1) { top: 0px; }
-                .ph-stack-card:nth-of-type(2) { top: 20px; }
-                .ph-stack-card:nth-of-type(3) { top: 40px; }
-                .ph-stack-card:nth-of-type(4) { top: 60px; }
+                .ph-stack-card:nth-of-type(1) { top: 64px; }
+                .ph-stack-card:nth-of-type(2) { top: 86px; }
+                .ph-stack-card:nth-of-type(3) { top: 108px; }
+                .ph-stack-card:nth-of-type(4) { top: 130px; }
                 .ph-card-layout { grid-template-columns: 1fr; gap: 24px; min-height: auto; padding-top: 36px; }
                 .ph-card-title { font-size: 29px; }
                 .ph-card-description { font-size: 16px; }
@@ -1137,10 +1098,10 @@ export function HomePage() {
                 return (
                   <div
                     key={idx}
-                    className={`ph-stack-card ${themes[idx % themes.length]}`}
-                    data-ph-stack-index={idx}
-                  >
-                    <div className="ph-card-top">
+                  className={`ph-stack-card ${themes[idx % themes.length]}`}
+                  data-ph-stack-index={idx}
+                >
+                  <div className="ph-card-top">
                       <span className="ph-card-badge">{idx + 1}/{STORY_SLIDES.length}</span>
                       <div className="ph-card-icon">{slide.icon}</div>
                     </div>
@@ -1192,42 +1153,49 @@ export function HomePage() {
           </div>
         </section>
 
-        {/* Our Methodology */}
-        <section id="how-it-works" className="flex flex-col gap-10 scroll-mt-24">
-          <div className="flex flex-col items-center gap-2 text-center">
-            <span className="text-xs font-bold tracking-widest uppercase text-indigo-600">Methodology</span>
-            <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">How PriceHunt Works</h2>
-            <div className="h-1.5 w-12 bg-indigo-600 rounded-full mt-1.5"></div>
-            <p className="text-sm text-slate-500 mt-2 max-w-md">Our backend systems and transparency rules ensure clean, complete, and unbiased deals.</p>
+        {/* How it works — connected price journey */}
+        <section id="how-it-works" className="scroll-mt-24 relative overflow-hidden rounded-[2rem] border border-indigo-100 bg-white px-5 py-12 md:px-10 md:py-16 shadow-[0_18px_55px_rgba(79,70,229,0.10)]">
+          <style>{`
+            @keyframes priceTrail { to { stroke-dashoffset: -24; } }
+            @keyframes softFloat { 50% { transform: translateY(-7px); } }
+            .ph-process-trail { stroke-dasharray: 6 6; animation: priceTrail 1.5s linear infinite; }
+            .ph-process-card { animation: softFloat 5s ease-in-out infinite; }
+            .ph-process-card:nth-child(2) { animation-delay: .55s; }
+            .ph-process-card:nth-child(3) { animation-delay: 1.1s; }
+            @media (prefers-reduced-motion: reduce) { .ph-process-trail, .ph-process-card { animation: none; } }
+          `}</style>
+
+          <div className="absolute inset-0 opacity-[0.36] pointer-events-none" style={{ backgroundImage: 'radial-gradient(rgba(99,102,241,.16) 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+          <div className="absolute -left-24 -top-24 h-64 w-64 rounded-full bg-indigo-100/70 blur-3xl pointer-events-none" />
+          <div className="absolute -right-24 -bottom-24 h-64 w-64 rounded-full bg-teal-100/70 blur-3xl pointer-events-none" />
+
+          <div className="relative mx-auto max-w-2xl text-center">
+            <span className="inline-flex items-center gap-2 rounded-full border border-indigo-100 bg-indigo-50 px-4 py-2 text-[11px] font-black uppercase tracking-[0.16em] text-indigo-600"><span className="h-2 w-2 rounded-full bg-indigo-500 animate-pulse" />Simple process</span>
+            <h2 className="mt-5 text-3xl md:text-4xl font-black tracking-tight text-slate-900">Find the best price in <span className="bg-gradient-to-r from-indigo-600 to-teal-500 bg-clip-text text-transparent">three clear steps.</span></h2>
+            <p className="mt-3 text-sm md:text-base font-medium leading-relaxed text-slate-500">Search once, see live offers together, then buy directly from the store with the best deal.</p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Step 1 */}
-            <div className="border border-slate-100 rounded-2xl bg-white p-6 text-left flex flex-col gap-3 shadow-sm hover:border-indigo-500/40 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
-              <div className="text-3xl font-black text-slate-100">01</div>
-              <h3 className="text-sm font-bold text-slate-800 tracking-widest uppercase">Live Matching</h3>
-              <p className="text-sm text-slate-500 leading-relaxed">
-                When you enter a search, we pull pricing from popular online stores in real-time.
-              </p>
-            </div>
 
-            {/* Step 2 */}
-            <div className="border border-slate-100 rounded-2xl bg-white p-6 text-left flex flex-col gap-3 shadow-sm hover:border-indigo-500/40 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
-              <div className="text-3xl font-black text-indigo-100">02</div>
-              <h3 className="text-sm font-bold text-slate-800 tracking-widest uppercase">Smart Matcher</h3>
-              <p className="text-sm text-slate-500 leading-relaxed">
-                Our backend groups identical products so you can view all stores in a single card. Differences in storage or specifications are separated cleanly.
-              </p>
-            </div>
-
-            {/* Step 3 */}
-            <div className="border border-slate-100 rounded-2xl bg-white p-6 text-left flex flex-col gap-3 shadow-sm hover:border-teal-550/40 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
-              <div className="text-3xl font-black text-teal-100">03</div>
-              <h3 className="text-sm font-bold text-slate-800 tracking-widest uppercase">Direct Store Links</h3>
-              <p className="text-sm text-slate-500 leading-relaxed">
-                PriceHunt is completely free to use. We provide direct storefront links to ensure transparency and ease of shopping.
-              </p>
-            </div>
+          <div className="relative mt-12 grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
+            <svg className="absolute hidden md:block left-[14%] top-12 h-10 w-[72%]" viewBox="0 0 720 40" fill="none" aria-hidden="true"><path className="ph-process-trail" d="M0 20 H720" stroke="#818cf8" strokeWidth="2" /></svg>
+            {[
+              { step: '01', title: 'Tell us what you need', text: 'Type a product, brand, or category. We understand everyday shopping searches.', label: 'Start searching', color: 'indigo', icon: <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-4.35-4.35m1.35-5.15a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0Z" /> },
+              { step: '02', title: 'Watch offers line up', text: 'PriceHunt collects and groups matching listings across your favorite stores.', label: 'Live comparison', color: 'violet', icon: <path strokeLinecap="round" strokeLinejoin="round" d="M7 3v18M17 3v18M3 7h18M3 17h18" /> },
+              { step: '03', title: 'Choose your best deal', text: 'Compare the lowest price and go straight to the official store to purchase.', label: 'Save with confidence', color: 'teal', icon: <path strokeLinecap="round" strokeLinejoin="round" d="m5 12 4 4L19 6" /> },
+            ].map((item, index) => {
+              const styles = {
+                indigo: 'border-indigo-100 from-indigo-50 to-white text-indigo-600 ring-indigo-100',
+                violet: 'border-violet-100 from-violet-50 to-white text-violet-600 ring-violet-100',
+                teal: 'border-teal-100 from-teal-50 to-white text-teal-600 ring-teal-100',
+              };
+              return <article key={item.step} className={`ph-process-card group relative rounded-3xl border bg-gradient-to-b p-7 shadow-[0_10px_28px_rgba(15,23,42,0.06)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_18px_38px_rgba(79,70,229,0.16)] ${styles[item.color]}`} style={{ animationDelay: `${index * 140}ms` }}>
+                <div className="absolute right-6 top-5 text-5xl font-black tracking-tighter text-slate-900/[0.05]">{item.step}</div>
+                <div className={`flex h-14 w-14 items-center justify-center rounded-2xl bg-white shadow-sm ring-1 ${styles[item.color].split(' ').slice(-1)[0]} transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110`}><svg className={`h-6 w-6 ${styles[item.color].split(' ')[3]}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.2}>{item.icon}</svg></div>
+                <div className="mt-8 text-[11px] font-black tracking-[0.18em] text-slate-400">STEP {item.step}</div>
+                <h3 className="mt-2 text-xl font-black tracking-tight text-slate-900">{item.title}</h3>
+                <p className="mt-3 text-sm font-medium leading-relaxed text-slate-500">{item.text}</p>
+                <div className={`mt-7 inline-flex items-center gap-2 text-xs font-black ${styles[item.color].split(' ')[3]}`}><span className={`h-2 w-2 rounded-full ${item.color === 'teal' ? 'bg-teal-500' : item.color === 'violet' ? 'bg-violet-500' : 'bg-indigo-500'} animate-pulse`} />{item.label}</div>
+              </article>;
+            })}
           </div>
         </section>
 
