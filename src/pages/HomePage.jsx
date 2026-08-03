@@ -15,9 +15,10 @@ const COLLECTIONS = [
     colorClass: 'text-blue-600',
     bgClass: 'bg-blue-50 group-hover:bg-blue-600 group-hover:text-white',
     icon: (
-      <svg className="h-6 w-6 transition-transform group-hover:scale-110 duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <rect x="6" y="2" width="10" height="20" rx="2" />
-        <circle cx="11" cy="18" r="1.25" fill="currentColor" />
+      <svg className="h-7 w-7 transition-transform duration-300 group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.9}>
+        <rect x="6.5" y="2.5" width="11" height="19" rx="2.3" />
+        <path strokeLinecap="round" d="M10 5h4" />
+        <circle cx="12" cy="18.5" r=".7" fill="currentColor" />
       </svg>
     )
   },
@@ -28,9 +29,10 @@ const COLLECTIONS = [
     colorClass: 'text-amber-600',
     bgClass: 'bg-amber-50 group-hover:bg-amber-600 group-hover:text-white',
     icon: (
-      <svg className="h-6 w-6 transition-transform group-hover:scale-110 duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <circle cx="12" cy="12" r="6" />
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 2V6M12 18V22M9 6h6M9 18h6" />
+      <svg className="h-7 w-7 transition-transform duration-300 group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.9}>
+        <rect x="8" y="2" width="8" height="20" rx="2.5" />
+        <rect x="6" y="6.5" width="12" height="11" rx="3" fill="currentColor" fillOpacity=".14" />
+        <path strokeLinecap="round" d="M12 9.5v3l2 1.2" />
       </svg>
     )
   },
@@ -41,8 +43,9 @@ const COLLECTIONS = [
     colorClass: 'text-purple-650',
     bgClass: 'bg-purple-50 group-hover:bg-purple-600 group-hover:text-white',
     icon: (
-      <svg className="h-6 w-6 transition-transform group-hover:scale-110 duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M4 14C4 9.58 7.58 6 12 6c4.42 0 8 3.58 8 8v4h-4v-4h4v0c0-3.31-2.69-6-6-6s-6 2.69-6 6v0h4v4H4v-4z" />
+      <svg className="h-7 w-7 transition-transform duration-300 group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.9}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M4 15v-3a8 8 0 0 1 16 0v3M4 15h4v4H5a1 1 0 0 1-1-1v-3Zm16 0h-4v4h3a1 1 0 0 0 1-1v-3Z" />
+        <path strokeLinecap="round" d="M16 20c-.8 1.1-2.1 1.6-4 1.6" />
       </svg>
     )
   },
@@ -53,9 +56,9 @@ const COLLECTIONS = [
     colorClass: 'text-rose-600',
     bgClass: 'bg-rose-50 group-hover:bg-rose-600 group-hover:text-white',
     icon: (
-      <svg className="h-6 w-6 transition-transform group-hover:scale-110 duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M14 10V5a2 2 0 00-2-2H4a2 2 0 00-2 2v9a3 3 0 003 3h14a3 3 0 003-3v-4H14z" />
-        <path strokeLinecap="round" strokeLinejoin="round" d="M2 14h20" />
+      <svg className="h-7 w-7 transition-transform duration-300 group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.9}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3 15.5c2.4-.2 4.4-1.6 5.7-4.2l1.7 1.4c1.5 1.2 3.3 1.9 5.2 1.9H19l2 2.1v2.8H4.1A2.1 2.1 0 0 1 2 17.4c0-1 .4-1.8 1-1.9Z" />
+        <path strokeLinecap="round" d="M8 17.5h.01M16.5 17.5h.01" />
       </svg>
     )
   },
@@ -66,9 +69,9 @@ const COLLECTIONS = [
     colorClass: 'text-teal-600',
     bgClass: 'bg-teal-50 group-hover:bg-teal-600 group-hover:text-white',
     icon: (
-      <svg className="h-6 w-6 transition-transform group-hover:scale-110 duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <rect x="8" y="8" width="8" height="12" rx="1.5" />
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 2v6M10 5h4" />
+      <svg className="h-7 w-7 transition-transform duration-300 group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.9}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M10 4h4m-2 0v3m-3 0h6l1 3v9.5A1.5 1.5 0 0 1 14.5 21h-5A1.5 1.5 0 0 1 8 19.5V10l1-3Z" />
+        <path strokeLinecap="round" d="M10.5 14.5c.6.8 1.4 1.2 2.5 1.2s1.9-.4 2.5-1.2" />
       </svg>
     )
   },
@@ -79,8 +82,9 @@ const COLLECTIONS = [
     colorClass: 'text-emerald-600',
     bgClass: 'bg-emerald-50 group-hover:bg-emerald-600 group-hover:text-white',
     icon: (
-      <svg className="h-6 w-6 transition-transform group-hover:scale-110 duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 4L18 8l-2 3-2-1v10h-4V10L8 11L6 8l6-4z" />
+      <svg className="h-7 w-7 transition-transform duration-300 group-hover:scale-110" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.9}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="m8.5 4 3.5 2 3.5-2 4.5 3.8-2.4 3.1-2.2-1.3V20H8.6V9.6l-2.2 1.3L4 7.8 8.5 4Z" />
+        <path strokeLinecap="round" d="M10 6.8h4" />
       </svg>
     )
   }
@@ -102,7 +106,7 @@ const FEATURED_DISCOVERIES = [
     platform: "Amazon",
     type: "Smartphone",
     searchQuery: "samsung s26 ultra",
-    image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=200&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=90&w=1200&auto=format&fit=crop"
   },
   {
     name: "Sony WH-1000XM5 Noise Cancelling Headphones",
@@ -110,7 +114,7 @@ const FEATURED_DISCOVERIES = [
     platform: "Flipkart",
     type: "Audio",
     searchQuery: "sony wh-1000xm5",
-    image: "https://images.unsplash.com/photo-1546435770-a3e426bf472b?q=80&w=200&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1546435770-a3e426bf472b?q=90&w=1200&auto=format&fit=crop"
   },
   {
     name: "MacBook Air with M3 chip",
@@ -118,7 +122,7 @@ const FEATURED_DISCOVERIES = [
     platform: "Flipkart",
     type: "Laptop",
     searchQuery: "MacBook Air with M3 chip",
-    image: "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?q=80&w=200&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?q=90&w=1200&auto=format&fit=crop"
   },
   {
     name: "Carrier 1.5 Ton 5 Star Split AC",
@@ -135,7 +139,7 @@ const FEATURED_DISCOVERIES = [
     platform: "Amazon",
     type: "Beauty",
     searchQuery: "minimalist face serum",
-    image: "https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?q=80&w=200&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?q=90&w=1200&auto=format&fit=crop"
   },
   {
     name: "Nike C1ty Sneakers",
@@ -143,7 +147,7 @@ const FEATURED_DISCOVERIES = [
     platform: "Amazon",
     type: "Footwear",
     searchQuery: "Nike C1ty Sneakers",
-    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=200&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=90&w=1200&auto=format&fit=crop"
   },
   {
     name: "Bellavita perfume",
@@ -151,7 +155,7 @@ const FEATURED_DISCOVERIES = [
     platform: "Flipkart",
     type: "Fragrance",
     searchQuery: "Bellavita perfume",
-    image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?q=80&w=200&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?q=90&w=1200&auto=format&fit=crop"
   },
   {
     name: "SAFARI Suitcase",
@@ -159,7 +163,7 @@ const FEATURED_DISCOVERIES = [
     platform: "Myntra",
     type: "Travel Gear",
     searchQuery: "SAFARI Suitcase",
-    image: "https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?q=80&w=200&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1565026057447-bc90a3dceb87?q=90&w=1200&auto=format&fit=crop"
   }
 ];
 
@@ -456,7 +460,7 @@ export function HomePage() {
                 Start Comparing Now
               </button>
               <a 
-                href="#how-it-works"
+                href="/how-it-works"
                 className="text-sm font-black tracking-wider uppercase text-slate-500 hover:text-indigo-650 transition-colors flex items-center gap-1.5 py-2 cursor-pointer"
               >
                 Learn Methodology &rarr;
@@ -808,44 +812,103 @@ export function HomePage() {
       <main className="mx-auto w-full max-w-7xl px-4 py-10 flex flex-col gap-20 relative z-10">
         
         {/* Curated Collections Section */}
-        <section className="flex flex-col gap-6 text-center">
-          <div className="flex flex-col items-center gap-2">
-            <span className="text-xs font-bold tracking-widest uppercase text-indigo-600">Quick Searches</span>
-            <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">Popular Categories</h2>
-            <div className="h-1.5 w-12 bg-indigo-600 rounded-full mt-1.5"></div>
+        <section className="hidden">
+          <style>{`
+            @keyframes categorySheen { 0%, 100% { transform: translateX(-125%) rotate(12deg); } 55% { transform: translateX(190%) rotate(12deg); } }
+            .ph-category-card::after { content: ''; position: absolute; inset: -35% auto -35% -20%; width: 28%; background: linear-gradient(90deg, transparent, rgba(255,255,255,.75), transparent); transform: translateX(-125%) rotate(12deg); pointer-events: none; }
+            .ph-category-card:hover::after { animation: categorySheen .75s ease-out; }
+            .ph-category-card > div:last-child { display: none; }
+          `}</style>
+          <div className="absolute -right-24 -top-28 h-72 w-72 rounded-full bg-indigo-100/70 blur-3xl" aria-hidden="true" />
+          <div className="absolute -bottom-32 -left-28 h-72 w-72 rounded-full bg-teal-100/70 blur-3xl" aria-hidden="true" />
+          <div className="absolute inset-0 opacity-[0.5] pointer-events-none" style={{ backgroundImage: 'radial-gradient(rgba(99,102,241,.13) 1px, transparent 1px)', backgroundSize: '18px 18px' }} />
+
+          <div className="relative flex flex-col gap-4 text-center md:flex-row md:items-end md:justify-between md:text-left">
+            <div>
+              <span className="inline-flex rounded-full border border-indigo-100 bg-indigo-50 px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.16em] text-indigo-600">Quick searches</span>
+              <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-900 md:text-4xl">Explore popular categories</h2>
+              <p className="mx-auto mt-2 max-w-xl text-sm font-medium leading-relaxed text-slate-500 md:mx-0">Find your next deal through a collection made for everyday shopping, with live store prices ready to compare.</p>
+            </div>
+            <span className="text-xs font-bold uppercase tracking-widest text-slate-400">Tap a category to compare</span>
           </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6">
-            {COLLECTIONS.map((col, i) => (
-              <div
-                key={i}
-                onClick={() => handleTrendingClick(col.query)}
-                className="group relative border border-slate-100 bg-white p-6 rounded-2xl text-left cursor-pointer hover:border-indigo-500/40 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 flex items-start gap-4.5 animate-scale-in"
-                style={{ animationDelay: `${i * 75}ms`, animationFillMode: 'both' }}
-              >
-                <div className={`flex h-13 w-13 shrink-0 items-center justify-center rounded-xl border border-transparent transition-all duration-300 text-lg ${col.colorClass} ${col.bgClass}`}>
-                  {col.icon}
-                </div>
-                <div className="flex flex-col overflow-hidden justify-center min-h-[52px]">
-                  <h3 className="text-[15.5px] font-extrabold text-slate-850 group-hover:text-indigo-600 transition-colors">
-                    {col.name}
-                  </h3>
-                  <p className="text-[11.5px] text-slate-400 font-bold tracking-wider mt-0.5 uppercase">
-                    {col.desc}
-                  </p>
-                  <div className="mt-2 flex items-center text-[10.5px] font-extrabold tracking-widest uppercase text-indigo-600 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-[-4px] group-hover:translate-x-0">
-                    Compare Now &rarr;
+
+          <div className="relative mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-5">
+            {COLLECTIONS.map((col, i) => {
+              const cardThemes = [
+                'from-blue-50 to-indigo-50 border-blue-100 hover:border-blue-300',
+                'from-amber-50 to-orange-50 border-amber-100 hover:border-amber-300',
+                'from-violet-50 to-purple-50 border-violet-100 hover:border-violet-300',
+                'from-rose-50 to-pink-50 border-rose-100 hover:border-rose-300',
+                'from-teal-50 to-cyan-50 border-teal-100 hover:border-teal-300',
+                'from-emerald-50 to-green-50 border-emerald-100 hover:border-emerald-300',
+              ];
+              return (
+                <button
+                  key={col.name}
+                  type="button"
+                  onClick={() => handleTrendingClick(col.query)}
+                  className={`ph-category-card group relative min-h-[205px] overflow-hidden rounded-3xl border bg-gradient-to-br p-5 text-left shadow-[0_8px_22px_rgba(15,23,42,.05)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_38px_rgba(79,70,229,.14)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 ${cardThemes[i]}`}
+                  style={{ animationDelay: `${i * 80}ms`, animationFillMode: 'both' }}
+                >
+                  <div className="flex items-start justify-between">
+                    <div className={`flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-sm ring-8 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6 ${col.colorClass}`}>
+                      {col.icon}
+                    </div>
+                    <span className="text-[11px] font-black tracking-widest text-slate-300">0{i + 1}</span>
+                    </div>
+                  <div className="mt-7">
+                    <h3 className="text-xl font-black tracking-tight text-slate-900 transition-colors group-hover:text-indigo-700">{col.name}</h3>
+                    <p className="mt-2 text-xs font-bold leading-relaxed text-slate-500">{col.desc}</p>
                   </div>
+                  <div className="mt-5 flex items-center gap-2 text-[11px] font-black uppercase tracking-[0.13em] text-indigo-600 transition-transform duration-300 group-hover:translate-x-1">Explore deals <span className="text-base leading-none">→</span></div>
+                  <div className="mt-auto pt-3 text-[10px] font-black uppercase tracking-[0.13em] text-indigo-600 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">Compare deals →</div>
+                </button>
+              );
+            })}
+          </div>
+        </section>
+
+        {false && <section className="relative overflow-hidden rounded-[2rem] border border-indigo-100 bg-gradient-to-br from-white via-[#fbfaff] to-indigo-50/60 p-5 shadow-[0_20px_45px_rgba(79,70,229,0.10)] sm:p-8 md:p-12">
+          <style>{`
+            @keyframes interestPop { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+            .ph-interest-chip:hover { animation: interestPop .55s ease-in-out; }
+          `}</style>
+          <div className="absolute left-[4%] top-16 hidden -rotate-12 text-7xl drop-shadow-[0_18px_14px_rgba(109,40,217,.25)] md:block" aria-hidden="true">🛍️</div>
+          <div className="absolute right-[4%] top-20 hidden rotate-12 text-7xl drop-shadow-[0_18px_14px_rgba(79,70,229,.22)] md:block" aria-hidden="true">🔎</div>
+          <div className="relative mx-auto max-w-3xl text-center">
+            <span className="inline-flex items-center gap-2 rounded-full border border-violet-200 bg-white px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] text-indigo-600 shadow-sm"><span>ϟ</span> Quick searches</span>
+            <h2 className="mt-4 text-3xl font-black tracking-tight text-slate-900 sm:text-4xl md:text-5xl">Explore popular <span className="bg-gradient-to-r from-indigo-600 via-violet-500 to-blue-500 bg-clip-text text-transparent">categories</span></h2>
+            <p className="mt-3 text-sm font-medium leading-relaxed text-slate-600 md:text-base">Choose what you’re shopping for and we’ll make it easy to compare the best live prices.</p>
+          </div>
+
+          <div className="relative mt-10 space-y-4 md:mt-12">
+            {CATEGORY_GROUPS.map((group, groupIndex) => (
+              <div key={group.title} className={`rounded-3xl border bg-gradient-to-r p-4 shadow-[0_8px_20px_rgba(79,70,229,.04)] sm:p-5 ${['border-violet-200/70 from-violet-50/80 to-white', 'border-rose-200/70 from-rose-50/80 to-white', 'border-emerald-200/70 from-emerald-50/80 to-white'][groupIndex]}`}>
+                <div className="mb-4 flex items-center justify-between gap-3">
+                  <h3 className="flex items-center gap-2 text-lg font-black tracking-tight text-slate-900 sm:text-xl"><span className="text-2xl">{group.icon}</span>{group.title}</h3>
+                  <span className="rounded-full border border-indigo-100 bg-white/70 px-3 py-1.5 text-xs font-black text-indigo-600">View all →</span>
+                </div>
+                <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7">
+                  {group.items.map((item) => (
+                    <button
+                      key={item.label}
+                      type="button"
+                      onClick={() => handleTrendingClick(item.query)}
+                      className="ph-interest-chip group flex min-h-[112px] flex-col items-center justify-center gap-2 rounded-2xl border border-white bg-white/90 p-3 text-center text-sm font-black text-slate-800 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-indigo-200 hover:shadow-[0_12px_20px_rgba(79,70,229,.14)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+                    >
+                      <span className="grid h-12 w-12 place-items-center rounded-full bg-gradient-to-br from-indigo-50 to-violet-100 text-3xl leading-none shadow-inner transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3" aria-hidden="true">{item.icon}</span><span>{item.label}</span>
+                    </button>
+                  ))}
                 </div>
               </div>
             ))}
           </div>
-        </section>
+        </section>}
       </main>
 
       {/* Featured Discoveries (Trending) - Full Width Section */}
       <section
-        className="flex flex-col gap-8 w-full overflow-hidden py-20 bg-[#080d18] border-y border-indigo-400/15 relative z-10 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]"
+        className="hidden"
         style={{
           backgroundImage: 'linear-gradient(rgba(148,163,184,.06) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,.06) 1px, transparent 1px), radial-gradient(circle at 18% 52%, rgba(79,70,229,.20), transparent 28%), radial-gradient(circle at 82% 58%, rgba(20,184,166,.13), transparent 30%)',
           backgroundSize: '48px 48px, 48px 48px, auto, auto',
@@ -914,6 +977,49 @@ export function HomePage() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="relative overflow-hidden border-y border-indigo-400/20 bg-[#070b18] px-4 py-16 text-white sm:px-6 md:py-20">
+          <div className="absolute inset-0 opacity-60 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 10% 15%, rgba(139,92,246,.36), transparent 24%), radial-gradient(circle at 88% 40%, rgba(6,182,212,.22), transparent 27%), radial-gradient(rgba(148,163,184,.1) 1px, transparent 1px)', backgroundSize: 'auto, auto, 28px 28px' }} />
+          <svg className="absolute right-0 top-0 h-full w-[45%] text-violet-300/15 pointer-events-none" viewBox="0 0 600 600" fill="none" aria-hidden="true"><path d="M80 120c160-140 230 110 350-25s95 225-40 295M130 520c95-90 180-20 305-145" stroke="currentColor" strokeWidth="2"/><circle cx="80" cy="120" r="6" fill="currentColor"/><circle cx="430" cy="95" r="6" fill="currentColor"/><circle cx="390" cy="390" r="6" fill="currentColor"/></svg>
+
+          <div className="relative mx-auto max-w-7xl">
+            <div className="mx-auto max-w-3xl text-center">
+              <span className="inline-flex items-center gap-2 rounded-full border border-fuchsia-400/30 bg-fuchsia-500/10 px-4 py-2 text-[11px] font-black uppercase tracking-[0.16em] text-fuchsia-300"><span>✦</span> Trending finds</span>
+              <h2 className="mt-5 text-4xl font-black tracking-tight sm:text-5xl">Featured <span className="bg-gradient-to-r from-fuchsia-400 via-violet-400 to-cyan-300 bg-clip-text text-transparent">Discoveries</span></h2>
+              <p className="mt-3 text-sm font-medium text-slate-300 sm:text-base">Handpicked products, live prices, and top deals from trusted stores.</p>
+              <div className="mx-auto mt-5 flex items-center justify-center gap-3 text-fuchsia-400"><span className="h-px w-14 bg-gradient-to-r from-transparent to-fuchsia-400" /><span className="text-xl">✦</span><span className="h-px w-14 bg-gradient-to-l from-transparent to-fuchsia-400" /></div>
+            </div>
+
+            <div className="relative left-1/2 mt-10 w-screen -translate-x-1/2 overflow-hidden py-4">
+              <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-[#070b18] to-transparent sm:w-24" />
+              <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-[#070b18] to-transparent sm:w-24" />
+              <div className="flex animate-marquee gap-6 px-4 sm:px-6">
+              {[...FEATURED_DISCOVERIES, ...FEATURED_DISCOVERIES].map((prod, index) => (
+                <article key={`${prod.name}-${index}`} onClick={() => handleTrendingClick(prod.searchQuery)} className="group relative w-[320px] shrink-0 cursor-pointer overflow-hidden rounded-3xl border border-indigo-400/30 bg-gradient-to-b from-[#121a35] to-[#0b1024] p-3 shadow-[0_16px_34px_rgba(0,0,0,.28)] transition-all duration-500 hover:-translate-y-2 hover:border-fuchsia-400/65 hover:shadow-[0_20px_42px_rgba(124,58,237,.30)]">
+                  <div className="relative h-56 overflow-hidden rounded-2xl bg-[#0d1730]">
+                    <img src={prod.image} alt={prod.name} loading="eager" decoding="async" className={`h-full w-full ${prod.imageFit || 'object-cover'} transition-transform duration-700 group-hover:scale-110`} />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0b1024]/60 via-transparent to-transparent" />
+                    <span className="absolute left-3 top-3 rounded-full bg-fuchsia-600/90 px-3 py-1 text-[10px] font-black uppercase tracking-wider text-white shadow-lg">{prod.type}</span>
+                    <span className="absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-full border border-white/25 bg-slate-950/45 text-lg text-white/80 backdrop-blur-sm transition-colors group-hover:text-fuchsia-300">♡</span>
+                  </div>
+                  <div className="px-2 pb-2 pt-5">
+                    <h3 className="line-clamp-2 min-h-12 text-lg font-black leading-snug text-white">{prod.name}</h3>
+                    <p className="mt-2 text-[11px] font-black uppercase tracking-wider text-slate-400">Lowest on <span className="text-cyan-300">{prod.platform}</span></p>
+                    <div className="mt-5 flex items-end justify-between border-t border-white/10 pt-4">
+                      <div><span className="block text-[10px] font-black uppercase tracking-wider text-slate-500">Compare from</span><span className="mt-1 block text-2xl font-black text-fuchsia-300">{formatINR(prod.price)}</span></div>
+                      <span className="grid h-11 w-11 place-items-center rounded-full bg-gradient-to-br from-fuchsia-500 to-violet-600 text-xl font-bold shadow-lg shadow-fuchsia-500/20 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                    </div>
+                  </div>
+                </article>
+              ))}
+              </div>
+            </div>
+
+            <div className="mx-auto mt-10 grid max-w-4xl grid-cols-2 overflow-hidden rounded-2xl border border-indigo-400/20 bg-white/[.04] text-center sm:grid-cols-4">
+              {['Best price guaranteed', 'Top-rated products', 'Secure shopping', 'Trusted by shoppers'].map((item, index) => <div key={item} className={`flex items-center justify-center gap-2 px-3 py-4 text-xs font-bold text-slate-300 ${index ? 'border-l border-white/10' : ''}`}><span className="text-fuchsia-300">{['⌾','☆','⌑','✦'][index]}</span>{item}</div>)}
             </div>
           </div>
         </section>
@@ -1133,23 +1239,24 @@ export function HomePage() {
 
           </section>
 
-          {/* Live Status Statistics - Responsive mobile (1 col stacked) vs desktop (3 cols inline) */}
-          <section className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-0 border border-slate-100 rounded-2xl bg-white p-6 py-8 md:py-10 text-center shadow-sm relative overflow-hidden">
+          {/* Shopper benefits - responsive mobile stack and desktop columns */}
+          <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 border border-slate-100 rounded-2xl bg-white p-6 py-8 md:py-10 text-center shadow-sm relative overflow-hidden">
             <div className="absolute inset-0 opacity-[0.01] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#4f46e5 1.5px, transparent 1.5px)', backgroundSize: '16px 16px' }}></div>
-          <div className="flex flex-col gap-1 border-b border-slate-100/60 pb-5 md:pb-0 md:border-b-0 md:border-r border-slate-100 z-10">
+          <div className="flex flex-col gap-1 border-b border-slate-100/60 pb-5 sm:border-r sm:pr-4 lg:border-b-0 lg:pb-0 z-10">
             <span className="text-3xl md:text-4.5xl font-black text-indigo-650 tracking-tight">4+</span>
             <span className="text-xs font-bold tracking-wider uppercase text-slate-400 mt-0.5">Stores Integrated</span>
           </div>
-          <div className="flex flex-col gap-1 border-b border-slate-100/60 pb-5 md:pb-0 md:border-b-0 md:border-r border-slate-100 z-10">
+          <div className="flex flex-col gap-1 border-b border-slate-100/60 pb-5 sm:pl-4 lg:border-b-0 lg:border-r lg:pb-0 z-10">
             <span className="text-3xl md:text-4.5xl font-black text-indigo-650 tracking-tight">100%</span>
             <span className="text-xs font-bold tracking-wider uppercase text-slate-400 mt-0.5">Real-Time Prices</span>
           </div>
-          <div className="flex flex-col gap-1 z-10">
-            <span className="text-3xl md:text-4.5xl font-black text-indigo-650 tracking-tight flex items-center justify-center gap-1.5 md:gap-2">
-              <span className="inline-block h-3 w-3 rounded-full bg-emerald-500 animate-pulse"></span>
-              Active
-            </span>
-            <span className="text-xs font-bold tracking-wider uppercase text-slate-400 mt-0.5">Server Status</span>
+          <div className="flex flex-col gap-1 border-b border-slate-100/60 pb-5 sm:border-b-0 sm:border-r sm:pr-4 lg:pb-0 z-10">
+            <span className="text-3xl md:text-4.5xl font-black text-indigo-650 tracking-tight">0%</span>
+            <span className="text-xs font-bold tracking-wider uppercase text-slate-400 mt-0.5">Hidden Fees or Markups</span>
+          </div>
+          <div className="flex flex-col gap-1 sm:pl-4 lg:pl-0 z-10">
+            <span className="text-3xl md:text-4.5xl font-black text-indigo-650 tracking-tight">One Search</span>
+            <span className="text-xs font-bold tracking-wider uppercase text-slate-400 mt-0.5">Compare Everywhere</span>
           </div>
         </section>
 

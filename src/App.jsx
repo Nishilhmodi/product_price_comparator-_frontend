@@ -1,10 +1,9 @@
 import { useEffect } from 'react';
-import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { HomePage } from './pages/HomePage';
 import { ResultsPage } from './pages/ResultsPage';
 import { HowItWorksPage } from './pages/HowItWorksPage';
 
-// Scroll to top helper component on page transition
 function ScrollToTop() {
   const { pathname } = useLocation();
 
