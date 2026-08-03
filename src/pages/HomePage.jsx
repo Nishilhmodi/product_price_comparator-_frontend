@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useRef, useState, useEffect } from 'react';
 import { Navbar } from '../components/Navbar';
 import { SearchBar } from '../components/SearchBar';
@@ -459,12 +459,10 @@ export function HomePage() {
               >
                 Start Comparing Now
               </button>
-              <a 
-                href="/how-it-works"
-                className="text-sm font-black tracking-wider uppercase text-slate-500 hover:text-indigo-650 transition-colors flex items-center gap-1.5 py-2 cursor-pointer"
+              <Link to="/how-it-works" className="text-sm font-black tracking-wider uppercase text-slate-500 hover:text-indigo-650 transition-colors flex items-center gap-1.5 py-2 cursor-pointer"
               >
                 Learn Methodology &rarr;
-              </a>
+              </Link>
             </div>
 
             {/* Supported Merchant Badges with Original Logos */}
